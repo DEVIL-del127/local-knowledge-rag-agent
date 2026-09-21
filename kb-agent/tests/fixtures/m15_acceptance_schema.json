@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kb-agent:m15-evidence-freeze-report-v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_batch",
+    "artifacts",
+    "checks",
+    "gate_result"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "m15-evidence-freeze-report-v1"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_batch": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256",
+          "schema_version",
+          "valid"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "valid": {
+            "const": true
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object"
+    },
+    "gate_result": {
+      "enum": [
+        "pass",
+        "fail"
+      ]
+    }
+  }
+}

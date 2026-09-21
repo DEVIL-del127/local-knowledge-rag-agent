@@ -1,0 +1,330 @@
+[
+ {
+  "intent": "semantic_retrieval",
+  "text": "讲讲回声状态网络的训练方法"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "库里有关于贝叶斯推理的内容吗"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "GAN怎么处理时间序列"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "什么是MCMC"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "有没有关于降维的"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "讲讲贝叶斯"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "墨西哥城地震数据出现在哪篇论文"
+ },
+ {
+  "intent": "hybrid",
+  "text": "知识库里贝叶斯相关的文献有哪些"
+ },
+ {
+  "intent": "hybrid",
+  "text": "哪些论文用了GAN"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "库里有贝叶斯的不"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "有啥ESN的论文没"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "有没有missing data相关的"
+ },
+ {
+  "intent": "semantic_retrieval",
+  "text": "比较一下回声状态网络和GAN"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "2024年发表的文献有哪些"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "找一下张昭昭写的论文"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "库里有英文论文吗"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "找25年之前的文献"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "2019年到2024年的文献"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "2021年及以前的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "去年发表的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "最近两年的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "最新的文献有哪些"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "90年代的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "2024年之后的中文论文"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "除了张昭昭的，其他都有哪些"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "不含2025年的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "排除中文论文"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "别给我看翻译版的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "硕士论文和期刊论文分别有哪些"
+ },
+ {
+  "intent": "inventory",
+  "text": "库里总共有多少篇文献"
+ },
+ {
+  "intent": "inventory",
+  "text": "列出知识库全部文档"
+ },
+ {
+  "intent": "inventory",
+  "text": "按年份统计一下库里的文献"
+ },
+ {
+  "intent": "inventory",
+  "text": "这15篇文档都是什么"
+ },
+ {
+  "intent": "inventory",
+  "text": "库里有几篇中文的"
+ },
+ {
+  "intent": "inventory",
+  "text": "信息量最大的文献是哪篇"
+ },
+ {
+  "intent": "doc_qa",
+  "text": "information-15-00222 这篇论文的方法是什么"
+ },
+ {
+  "intent": "doc_qa",
+  "text": "刘月的硕士论文核心内容是什么"
+ },
+ {
+  "intent": "doc_qa",
+  "text": "张昭昭那篇讲啥的"
+ },
+ {
+  "intent": "doc_qa",
+  "text": "刘月论文里用了什么网络结构"
+ },
+ {
+  "intent": "clarification",
+  "text": "这篇论文的方法是什么"
+ },
+ {
+  "intent": "clarification",
+  "text": "这篇论文的结论是什么"
+ },
+ {
+  "intent": "clarification",
+  "text": "帮我分析一下这篇论文"
+ },
+ {
+  "intent": "doc_qa",
+  "text": "2210.02040v3.pdf"
+ },
+ {
+  "intent": "cross_doc_synthesis",
+  "text": "张昭昭的双储层网络和他那篇回声信念网络有什么区别"
+ },
+ {
+  "intent": "cross_doc_synthesis",
+  "text": "对比一下2024年和2025年那两篇ESN论文"
+ },
+ {
+  "intent": "clarification",
+  "text": "这篇和那篇有什么不同"
+ },
+ {
+  "intent": "cross_doc_synthesis",
+  "text": "比较一下这两篇论文的方法"
+ },
+ {
+  "intent": "citation_query",
+  "text": "2021年Neurocomputing那篇引用了哪些文献"
+ },
+ {
+  "intent": "citation_query",
+  "text": "TimeGAN论文的参考文献有哪些"
+ },
+ {
+  "intent": "clarification",
+  "text": "它引用了哪些文献"
+ },
+ {
+  "intent": "clarification",
+  "text": "这篇论文的参考文献有哪些"
+ },
+ {
+  "intent": "metadata_query",
+  "text": "那篇NeurIPS论文的作者是谁"
+ },
+ {
+  "intent": "metadata_query",
+  "text": "information-15-00222的doi是什么"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "那个2022年CCE会议的"
+ },
+ {
+  "intent": "clarification",
+  "text": "这篇论文哪年发的"
+ },
+ {
+  "intent": "clarification",
+  "text": "这篇论文是谁写的"
+ },
+ {
+  "intent": "hybrid",
+  "text": "2024年关于缺失值插补的论文"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "张昭昭2024年发表的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "2025年之前的英文文献"
+ },
+ {
+  "intent": "hybrid",
+  "text": "关于贝叶斯的2021年论文"
+ },
+ {
+  "intent": "hybrid",
+  "text": "地震数据相关的2021年论文"
+ },
+ {
+  "intent": "hybrid",
+  "text": "最新的关于回声状态网络的"
+ },
+ {
+  "intent": "hybrid",
+  "text": "NeurIPS上关于时间序列GAN的"
+ },
+ {
+  "intent": "hybrid",
+  "text": "2025年自动化学报上的插补方法"
+ },
+ {
+  "intent": "hybrid",
+  "text": "2024那篇GAN+贝叶斯的"
+ },
+ {
+  "intent": "attribute_filter",
+  "text": "帮我找找2021年Neurocomputing那篇"
+ },
+ {
+  "intent": "non_kb",
+  "text": "帮我写个Python脚本"
+ },
+ {
+  "intent": "non_kb",
+  "text": "写一份实验方案"
+ },
+ {
+  "intent": "non_kb",
+  "text": "你叫什么名字"
+ },
+ {
+  "intent": "non_kb",
+  "text": "谢谢"
+ },
+ {
+  "intent": "non_kb",
+  "text": "分析一下这个PDF为什么乱码"
+ },
+ {
+  "intent": "non_kb",
+  "text": "把文档给我排序一下"
+ },
+ {
+  "intent": "non_kb",
+  "text": "删除那篇文档"
+ },
+ {
+  "intent": "non_kb",
+  "text": "今天几号"
+ },
+ {
+  "intent": "non_kb",
+  "text": "帮我改一下这个代码"
+ },
+ {
+  "intent": "non_kb",
+  "text": "翻译一下这篇"
+ },
+ {
+  "intent": "invalid",
+  "text": "？"
+ },
+ {
+  "intent": "invalid",
+  "text": "asdfghjkl"
+ },
+ {
+  "intent": "invalid",
+  "text": "！！！！！"
+ },
+ {
+  "intent": "clarification",
+  "text": "引用格式是什么"
+ },
+ {
+  "intent": "clarification",
+  "text": "20年左右的文献"
+ },
+ {
+  "intent": "clarification",
+  "text": "上面提到的那篇2024年的"
+ }
+]

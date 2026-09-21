@@ -1,0 +1,55 @@
+{
+  "schema_version": "m14-real-llm-decision-matrix-v1",
+  "model": "qwen2.5:7b",
+  "rows": [
+    {
+      "name": "event_none",
+      "family": "event",
+      "source_clause": "温度连续超过85℃且持续10分钟",
+      "candidate_summaries": ["转速连续低于70%且持续10分钟", "温度连续低于85℃且持续10分钟"],
+      "expected_decision": "none_of_above"
+    },
+    {
+      "name": "set_none",
+      "family": "set",
+      "source_clause": "输出两类异常时间段的交集日期",
+      "candidate_summaries": ["两类异常日期的并集", "第一类异常日期减去第二类异常日期"],
+      "expected_decision": "none_of_above"
+    },
+    {
+      "name": "aggregate_none",
+      "family": "aggregate",
+      "source_clause": "计算这些日期中转换效率的日平均值",
+      "candidate_summaries": ["计算这些日期中辐照度的日平均值", "计算这些日期字段本身的平均值"],
+      "expected_decision": "none_of_above"
+    },
+    {
+      "name": "calculation_select",
+      "family": "calculation",
+      "source_clause": "计算温度峰值除以转速峰值",
+      "candidate_summaries": ["温度峰值 / 转速峰值", "转速峰值 / 温度峰值"],
+      "expected_decision": "select",
+      "expected_candidate_index": 0
+    },
+    {
+      "name": "calculation_ambiguous",
+      "family": "calculation",
+      "source_clause": "计算温度峰值和转速峰值两者的比值",
+      "candidate_summaries": ["温度峰值 / 转速峰值", "转速峰值 / 温度峰值"],
+      "expected_decision": "ambiguous"
+    },
+    {
+      "name": "reference_select",
+      "family": "reference",
+      "source_clause": "输出两类异常的交集日期，并计算这些日期中的日平均温度",
+      "candidate_summaries": ["target=交集日期输出; output_type=date", "target=第一类事件区间; output_type=interval"],
+      "candidate_payloads": [
+        {"op": "resolve_reference", "type": "date", "target": "intersection_dates", "lineage": "current"},
+        {"op": "resolve_reference", "type": "interval", "target": "first_event_intervals", "lineage": "current"}
+      ],
+      "target": {"operation": "resolve_reference", "expected_reference_type": "date"},
+      "expected_decision": "select",
+      "expected_candidate_index": 0
+    }
+  ]
+}

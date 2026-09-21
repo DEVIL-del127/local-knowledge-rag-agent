@@ -1,0 +1,24 @@
+servers:
+  docling:
+    transport: stdio
+    enabled: false
+    command: ${DOCLING_MCP_COMMAND}
+    args: []
+    allowed_tools:
+      - docling.convert
+  elasticsearch:
+    transport: stdio
+    enabled: false
+    command: ${ELASTIC_MCP_COMMAND}
+    args: []
+    env:
+      ES_URL: ${ELASTIC_MCP_ES_URL}
+    read_only: true
+    allowed_tools:
+      - list_indices
+      - get_mappings
+      - search
+      - esql
+      - get_shards
+
+# Secrets are read from environment variables and must never be stored here.

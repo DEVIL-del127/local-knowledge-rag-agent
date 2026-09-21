@@ -1,0 +1,1620 @@
+{
+  "schema_version": "m15-llm-choice-oracle-v1",
+  "model_contract": {
+    "model": "qwen2.5:7b",
+    "attempts_per_row": 3,
+    "aggregation": "unique allowed-protocol decision with at least two votes",
+    "provider_failure": "no_vote_and_not_closed",
+    "minimum_rows_per_family": 8
+  },
+  "rows": [
+    {
+      "oracle_id": "event:temp_high",
+      "family": "event",
+      "source_clause": "温度连续超过85℃并持续10分钟",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度>85℃连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "temperature",
+            "cmp": "gt",
+            "value": 85,
+            "unit": "celsius",
+            "duration_s": 600
+          },
+          "payload_digest": "a2e8f9d4dc027f7131bc5f6bf2f45895627c0a14f595029f7fa9344ac5951c04",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "温度<85℃连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "temperature",
+            "cmp": "lt",
+            "value": 85,
+            "unit": "celsius",
+            "duration_s": 600
+          },
+          "payload_digest": "474ee2497f31dd1576d4ac482134b3efc5255925a21679b5aaef045860eee913",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "2a0959c3337b584c05c8208d9fa523303a1416a262a9cd87aae77df362b53e02",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "a2e8f9d4dc027f7131bc5f6bf2f45895627c0a14f595029f7fa9344ac5951c04",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:accel_high",
+      "family": "event",
+      "source_clause": "加速度连续超过2.5m/s²并持续5秒",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "加速度>2.5m/s²连续5秒",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "acceleration",
+            "cmp": "gt",
+            "value": 2.5,
+            "unit": "m/s2",
+            "duration_s": 5
+          },
+          "payload_digest": "5996cf31efcf31d2371e126304124e1b9fe9303d73cf9239a6ab2abd62f11bb7",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "加速度<-2.5m/s²连续5秒",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "acceleration",
+            "cmp": "lt",
+            "value": -2.5,
+            "unit": "m/s2",
+            "duration_s": 5
+          },
+          "payload_digest": "0435e42493f82ecaa84c47c2b01d7cd3f263a941320e9c9c01c02f4759e37020",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "6169ec7fd1fe1e890ca59cfe41bf8072f1bc71bf96943f6d1958fbf1a3a68efb",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "5996cf31efcf31d2371e126304124e1b9fe9303d73cf9239a6ab2abd62f11bb7",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:wrong_field",
+      "family": "event",
+      "source_clause": "温度连续超过85℃并持续10分钟",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "压力>85kPa连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "pressure",
+            "cmp": "gt",
+            "value": 85,
+            "unit": "kpa",
+            "duration_s": 600
+          },
+          "payload_digest": "c865ad28b31824fb261b3b933b7a2761b97988678d96720464eceb2cd2dda8c4",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "转速>85rpm连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "speed",
+            "cmp": "gt",
+            "value": 85,
+            "unit": "rpm",
+            "duration_s": 600
+          },
+          "payload_digest": "ea6fe0bc80ef3a3122b6609d6f7fe9b15d388e02c01907abd559e0103738a39d",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "886ef8e8e2b7dd96517a0abd75c9379d3c27179fb00554500cbf31d8d6c07715",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:event_ambiguous",
+      "family": "event",
+      "source_clause": "温度或压力连续异常超过10分钟",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度异常连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "temperature",
+            "cmp": "outside_normal",
+            "duration_s": 600
+          },
+          "payload_digest": "68f55407d1b9640b9e20c0d089e902c2c12e89da21b38f41374c49aaf442d7a6",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "压力异常连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "pressure",
+            "cmp": "outside_normal",
+            "duration_s": 600
+          },
+          "payload_digest": "16156ac8478a52bc1bc647dab6958b346aa8f83f938f07488607007b02744c55",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "699b29008ebc265b759d51c87442af1deebfed2839c4ee8e5254798e61cc06b4",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:rated_speed",
+      "family": "event",
+      "source_clause": "转速连续低于额定转速70%并持续5分钟",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "转速<额定转速*0.7连续5分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "speed",
+            "cmp": "lt",
+            "baseline": "rated_speed",
+            "factor": 0.7,
+            "duration_s": 300
+          },
+          "payload_digest": "f3b0253440e0fd53f419435b2e96da173584f6eb0e5446c765322844ceb5bb18",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "转速<70rpm连续5分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "speed",
+            "cmp": "lt",
+            "value": 70,
+            "unit": "rpm",
+            "duration_s": 300
+          },
+          "payload_digest": "45293ef0398384999b8569c070babd05e1599a4ceca6910b61ffb9dcd88ae00a",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "df974aadc8dc8581eedb126bb77c00fa5ca91679cb0d8fb0831e6f8d173fdbac",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "f3b0253440e0fd53f419435b2e96da173584f6eb0e5446c765322844ceb5bb18",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:event_wrong_unit",
+      "family": "event",
+      "source_clause": "噪音连续超过75dB并持续30秒",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "噪音>75℃连续30秒",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "noise",
+            "cmp": "gt",
+            "value": 75,
+            "unit": "celsius",
+            "duration_s": 30
+          },
+          "payload_digest": "3f29e8a08722ba2cb9aaad01d52d4c5cc05ddb9c166c58344892adb8582a8724",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "温度>75dB连续30秒",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "temperature",
+            "cmp": "gt",
+            "value": 75,
+            "unit": "dB",
+            "duration_s": 30
+          },
+          "payload_digest": "74231b5c306cb74836feba2ddf5d91a0adfdb952d9f48a906c95bcbd53cd4c04",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "3c000f697c5b64676787b30c1dc96805be3a14ea783415e93aa7a203fe609c82",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:pressure_low",
+      "family": "event",
+      "source_clause": "压力连续低于2MPa并持续2分钟",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "压力<2MPa连续2分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "pressure",
+            "cmp": "lt",
+            "value": 2,
+            "unit": "mpa",
+            "duration_s": 120
+          },
+          "payload_digest": "1f29dad87ead2a0be2212d8d5e54641b9eb71a3958aac1483b0ffe52ee9ba5bf",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "压力>2MPa连续2分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "pressure",
+            "cmp": "gt",
+            "value": 2,
+            "unit": "mpa",
+            "duration_s": 120
+          },
+          "payload_digest": "27ba5fd0e57ada320ecbd6d684b202efe616cda6769925465e470226b897043d",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "716517d6d86f1fd9a726db92f7b713d22e82dfcd81cad378778108727090aa32",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "1f29dad87ead2a0be2212d8d5e54641b9eb71a3958aac1483b0ffe52ee9ba5bf",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "event:boundary_ambiguous",
+      "family": "event",
+      "source_clause": "温度在85℃边界持续10分钟",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度>=85℃连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "temperature",
+            "cmp": "gte",
+            "value": 85,
+            "unit": "celsius",
+            "duration_s": 600
+          },
+          "payload_digest": "341b456ec9130c1899de65091623c6ed80c29fa6458b86eeee3bde013f1adecd",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "温度>85℃连续10分钟",
+          "semantic_payload": {
+            "op": "consecutive",
+            "field": "temperature",
+            "cmp": "gt",
+            "value": 85,
+            "unit": "celsius",
+            "duration_s": 600
+          },
+          "payload_digest": "a2e8f9d4dc027f7131bc5f6bf2f45895627c0a14f595029f7fa9344ac5951c04",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "a28f51512c7b050d9e6560d7015dfa8a378794d69b6417d92a3a36ffb08fec61",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:intersection_dates",
+      "family": "set",
+      "source_clause": "输出两类异常的交集日期",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常日期交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "异常日期并集",
+          "semantic_payload": {
+            "op": "union",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "8e5c40376ed129facd09b2e35e0d2486c23da3c5915a20bb85d714125a4c4ef6",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "c0b9f8a2d3081b852aac6788be0a0f2ee8d4d55113e3905074536679f0eb45d5",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:union_intervals",
+      "family": "set",
+      "source_clause": "输出两类异常时间段的并集",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常区间交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "intervals_a",
+              "intervals_b"
+            ],
+            "grain": "interval"
+          },
+          "payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "异常区间并集",
+          "semantic_payload": {
+            "op": "union",
+            "inputs": [
+              "intervals_a",
+              "intervals_b"
+            ],
+            "grain": "interval"
+          },
+          "payload_digest": "e8b6c4e0d262083b100ed450e4efe380477c8604d6ee88e4d1a066c8c9ae611a",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "acfe50a27f4cd262135604d023b13b6060f1c711d8b52735e82a66712bd047cf",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "e8b6c4e0d262083b100ed450e4efe380477c8604d6ee88e4d1a066c8c9ae611a",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:difference",
+      "family": "set",
+      "source_clause": "输出A类日期排除B类日期后的结果",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "A日期-B日期",
+          "semantic_payload": {
+            "op": "difference",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "7dacd23e4ff092bb6e93be94d0751e8a0c54686a1906ae3f09615c281910669d",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "B日期-A日期",
+          "semantic_payload": {
+            "op": "difference",
+            "inputs": [
+              "dates_b",
+              "dates_a"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "0cff119502b4ca413c0ee29f29bf257b7c9b4e347024d437e439fae1ec27b557",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "87751f3dc1456ebaa5b3d264585bb23d7ec9adfa17dee1c6d0eb1903aa90b4d8",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "7dacd23e4ff092bb6e93be94d0751e8a0c54686a1906ae3f09615c281910669d",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:set_wrong_ops",
+      "family": "set",
+      "source_clause": "输出两类异常的交集日期",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常日期并集",
+          "semantic_payload": {
+            "op": "union",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "8e5c40376ed129facd09b2e35e0d2486c23da3c5915a20bb85d714125a4c4ef6",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "A日期-B日期",
+          "semantic_payload": {
+            "op": "difference",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "7dacd23e4ff092bb6e93be94d0751e8a0c54686a1906ae3f09615c281910669d",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "88ec1e2d24c4d661662ca76bd0f9f60720447d06aab425295e91d7543286f659",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:set_ambiguous",
+      "family": "set",
+      "source_clause": "组合两类异常日期",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常日期交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "异常日期并集",
+          "semantic_payload": {
+            "op": "union",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "8e5c40376ed129facd09b2e35e0d2486c23da3c5915a20bb85d714125a4c4ef6",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "c0b9f8a2d3081b852aac6788be0a0f2ee8d4d55113e3905074536679f0eb45d5",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:same_producer",
+      "family": "set",
+      "source_clause": "输出两类异常的交集日期",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "第一类日期与自身交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "dates_a",
+              "dates_a"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "3141b38a808ed8f165ba92cfe5153b18c483d761fbb4313bd6c7d14bc6517ea8",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "第一类日期与自身并集",
+          "semantic_payload": {
+            "op": "union",
+            "inputs": [
+              "dates_a",
+              "dates_a"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "cd3218651895ab48120cb721693c66a6a969d90355f960b0581e0ea9f2188ef3",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "39e6f7a81f6f825810bd675443bd9e4bba82596cb412562608e5ddb193ae05f6",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:interval_intersection",
+      "family": "set",
+      "source_clause": "输出两类异常的交集时间段",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常日期交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "异常区间交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "intervals_a",
+              "intervals_b"
+            ],
+            "grain": "interval"
+          },
+          "payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "f8fb66de0b5ba5ed179279332abc5bcd29c573ad6478357e5cd01cc99d4f5169",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "set:set_grain_ambiguous",
+      "family": "set",
+      "source_clause": "输出两类异常的重合结果",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常日期交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "dates_a",
+              "dates_b"
+            ],
+            "grain": "date"
+          },
+          "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "异常区间交集",
+          "semantic_payload": {
+            "op": "intersection",
+            "inputs": [
+              "intervals_a",
+              "intervals_b"
+            ],
+            "grain": "interval"
+          },
+          "payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "f8fb66de0b5ba5ed179279332abc5bcd29c573ad6478357e5cd01cc99d4f5169",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:avg_efficiency",
+      "family": "aggregate",
+      "source_clause": "计算这些日期中转换效率的日平均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "转换效率日平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "efficiency",
+            "scope": "intersection_dates",
+            "grain": "day"
+          },
+          "payload_digest": "8ebf263429a8515bf595f40d5c3b85f2554953af20adab8d2b6aaca6f2ccce16",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "辐照度日平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "irradiance",
+            "scope": "intersection_dates",
+            "grain": "day"
+          },
+          "payload_digest": "a93e19f499d350642999e39140106cd611af15099ee544aa72b172caeec08c64",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "2dc4f23b6d996b5a5da07bb27263aaa7aa96c4c0f12de7ab2180b5c473f404b7",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "8ebf263429a8515bf595f40d5c3b85f2554953af20adab8d2b6aaca6f2ccce16",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:scoped_avg",
+      "family": "aggregate",
+      "source_clause": "计算筛选用户的平均累计消费金额",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "筛选用户平均累计消费",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "total_spend",
+            "scope": "filtered_users"
+          },
+          "payload_digest": "3037ebf0bc5af57596216bae8b7b76229775bd775d9ad854b084210c7a5afd6e",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "全站平均累计消费",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "total_spend",
+            "scope": "global"
+          },
+          "payload_digest": "253413a30fa2562583af98127ae4c767a4942f13438a83a2dc5adfad94dc36c9",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "d4b1c3f4fc70dcd9c7adde829a4f02c6b4170ffa38be889d19aa9fc17b2016bc",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "3037ebf0bc5af57596216bae8b7b76229775bd775d9ad854b084210c7a5afd6e",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:sum_sales",
+      "family": "aggregate",
+      "source_clause": "计算这些订单的销售总额",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "订单销售额求和",
+          "semantic_payload": {
+            "op": "sum",
+            "measure": "sales_amount",
+            "scope": "filtered_orders"
+          },
+          "payload_digest": "6b4f5ca1954294a8a7c25db835a5d068b96ff6b5bb0fde93499cbed644e1b509",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "订单数求和",
+          "semantic_payload": {
+            "op": "sum",
+            "measure": "order_count",
+            "scope": "filtered_orders"
+          },
+          "payload_digest": "04d90b7bbe3224e1d6f592c9578142094b7f2083442d33aa82b7ce19cdee6f21",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "b4aff9732d2e57808e8f156b5866f5c940146dadbd1994f0e945020684316d7f",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "6b4f5ca1954294a8a7c25db835a5d068b96ff6b5bb0fde93499cbed644e1b509",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:stddev_accel",
+      "family": "aggregate",
+      "source_clause": "计算这些日期中加速度的标准差",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "加速度标准差",
+          "semantic_payload": {
+            "op": "stddev",
+            "measure": "acceleration",
+            "scope": "intersection_dates"
+          },
+          "payload_digest": "9785afc0e9680033c2d3a13b008f48b802f965b1671b202e79ab7c4096c5e7ef",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "电压标准差",
+          "semantic_payload": {
+            "op": "stddev",
+            "measure": "voltage",
+            "scope": "intersection_dates"
+          },
+          "payload_digest": "591d16fa309500d813bdb1d8c93781b4fd0df2f457796b5c065737bc9483d997",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "e62ea30e945f1d6c88bad9c4ff3a4a01485406e7ed7c049da547c9d1df846baf",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "9785afc0e9680033c2d3a13b008f48b802f965b1671b202e79ab7c4096c5e7ef",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:aggregate_wrong_measure",
+      "family": "aggregate",
+      "source_clause": "计算转换效率平均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "辐照度平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "irradiance",
+            "scope": "filtered"
+          },
+          "payload_digest": "d482648f673f45373010be946de764b2d614663bb46410c291364d52d91c3272",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "日期平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "date",
+            "scope": "filtered"
+          },
+          "payload_digest": "ab0939bc1d0f9c82be7673b720f3c6af0e1046906028d218372d5df01779d7b0",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "a964d9fd000a0d9ed7326201e8c858d7fc1a4ff19a00d1d2d13d431e05170eb6",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:aggregate_ambiguous",
+      "family": "aggregate",
+      "source_clause": "计算这些日期中两个指标的平均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "temperature",
+            "scope": "dates"
+          },
+          "payload_digest": "e1800ab8bb7d224a92496119bd08b81796323f147a1c0912f1d2fadb1a88a8b6",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "压力平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "pressure",
+            "scope": "dates"
+          },
+          "payload_digest": "d3f5b6a6f833edf6053ccb4b798318a6837f47c47e3c135a77223f7cecd77a13",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "27b7d50cc47fbe8d59a1d5f8b1e7df9b4631f290a47bb4831535bc56629f56d1",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:aggregate_date_hard_negative",
+      "family": "aggregate",
+      "source_clause": "计算这些日期中温度的平均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "日期平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "date",
+            "scope": "dates"
+          },
+          "payload_digest": "7176a12f7d2717582d9682d59b6d022cc3ad661e2270ad09875d5c1d0ccf0f92",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "区间平均值",
+          "semantic_payload": {
+            "op": "avg",
+            "measure": "interval",
+            "scope": "dates"
+          },
+          "payload_digest": "1225001f7251ae4a05f5d507ec4abbca24fa3e7f022aec0dfcb7fae1c2e35f23",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "eae05d210ef00320e66b643b99fb79c5ced44304be7c8033d2aeaf8d8cdc982c",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "aggregate:max_voltage",
+      "family": "aggregate",
+      "source_clause": "计算这些时间段内电压峰值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "电压最大值",
+          "semantic_payload": {
+            "op": "max",
+            "measure": "voltage",
+            "scope": "intervals"
+          },
+          "payload_digest": "829dd047a8b697d4dba5b8a2da997b77eff6f48cde4480ff1f1e4e4182fe7fd4",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "电压最小值",
+          "semantic_payload": {
+            "op": "min",
+            "measure": "voltage",
+            "scope": "intervals"
+          },
+          "payload_digest": "b2e6d3d6d37297cc92953b9a7a8537f5fc4ffd749a020187a626f9728de99adc",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "d860fb195f6d8d16e9aa640abee8aa8f3724080a9e6d556b641a98584e1a8de5",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "829dd047a8b697d4dba5b8a2da997b77eff6f48cde4480ff1f1e4e4182fe7fd4",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:ratio_order",
+      "family": "calculation",
+      "source_clause": "计算温度峰值除以转速峰值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度峰值/转速峰值",
+          "semantic_payload": {
+            "op": "ratio",
+            "operands": [
+              "max_temperature",
+              "max_speed"
+            ]
+          },
+          "payload_digest": "73ee4f48f0145c756300db7a57225f4f5614c6273f64ac0d1e65d1796a3aed24",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "转速峰值/温度峰值",
+          "semantic_payload": {
+            "op": "ratio",
+            "operands": [
+              "max_speed",
+              "max_temperature"
+            ]
+          },
+          "payload_digest": "a2598bf6047c93a0d9fb3c543231a7652f962848f678e2feefd56b7b950f316d",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "bb243cc0eb83cf736c4d0b2e67327006a5833cc180e6f65821a3e94b17929add",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "73ee4f48f0145c756300db7a57225f4f5614c6273f64ac0d1e65d1796a3aed24",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:ratio_ambiguous",
+      "family": "calculation",
+      "source_clause": "计算温度峰值和转速峰值两者的比值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度峰值/转速峰值",
+          "semantic_payload": {
+            "op": "ratio",
+            "operands": [
+              "max_temperature",
+              "max_speed"
+            ]
+          },
+          "payload_digest": "73ee4f48f0145c756300db7a57225f4f5614c6273f64ac0d1e65d1796a3aed24",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "转速峰值/温度峰值",
+          "semantic_payload": {
+            "op": "ratio",
+            "operands": [
+              "max_speed",
+              "max_temperature"
+            ]
+          },
+          "payload_digest": "a2598bf6047c93a0d9fb3c543231a7652f962848f678e2feefd56b7b950f316d",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "bb243cc0eb83cf736c4d0b2e67327006a5833cc180e6f65821a3e94b17929add",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:correlation",
+      "family": "calculation",
+      "source_clause": "计算交集时间段内缺陷密度与良率的相关系数",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "缺陷密度与良率相关系数",
+          "semantic_payload": {
+            "op": "correlation",
+            "operands": [
+              "defect_density",
+              "yield_rate"
+            ],
+            "scope": "intersection_intervals"
+          },
+          "payload_digest": "ebcb4e99a04504ec0ebf27eee33045d8ff4d6089cf5a5f714e64bf8868d47f3b",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "缺陷密度自相关",
+          "semantic_payload": {
+            "op": "correlation",
+            "operands": [
+              "defect_density",
+              "defect_density"
+            ],
+            "scope": "intersection_intervals"
+          },
+          "payload_digest": "2287202319495c994e0a6a4875e25775f3193008dcaf80d115ef3f56f3dd3e63",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "aad58891ac362bad5fefae218a7b3d22c0c81054b2f2e1df5361b81bcf80ae3a",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "ebcb4e99a04504ec0ebf27eee33045d8ff4d6089cf5a5f714e64bf8868d47f3b",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:difference_order",
+      "family": "calculation",
+      "source_clause": "计算筛选均值减去全站均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "筛选均值-全站均值",
+          "semantic_payload": {
+            "op": "difference",
+            "operands": [
+              "filtered_avg",
+              "global_avg"
+            ]
+          },
+          "payload_digest": "a746e52058e0316fa56f0c92d14d021fe41faf718e040837b5827bf705bc9c27",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "全站均值-筛选均值",
+          "semantic_payload": {
+            "op": "difference",
+            "operands": [
+              "global_avg",
+              "filtered_avg"
+            ]
+          },
+          "payload_digest": "a963a5411e8955b4d8a65bb233f6ff7b87a0382224395f56443709c1c5e9e2d2",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "2ec2f88b1f39dc2da4faa5161d42ada923cb2e0c1941ac36b42852f5be6a29d0",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "a746e52058e0316fa56f0c92d14d021fe41faf718e040837b5827bf705bc9c27",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:stddev",
+      "family": "calculation",
+      "source_clause": "计算加速度波动率（标准差）",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "stddev(acceleration)",
+          "semantic_payload": {
+            "op": "stddev",
+            "operands": [
+              "acceleration"
+            ]
+          },
+          "payload_digest": "f9b10e0519a3f329b02a13a666a34243c90ea9452034a786872ece91ec0f2d12",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "stddev(voltage)",
+          "semantic_payload": {
+            "op": "stddev",
+            "operands": [
+              "voltage"
+            ]
+          },
+          "payload_digest": "8d06b696fc3670a8ef63c41a9788661f474cae236496e64e3b62626aed7fee46",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "d5b74a90a1f67118446d768e99fdee4f5a0c15c725dc4d08d0342cfae5d53085",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "f9b10e0519a3f329b02a13a666a34243c90ea9452034a786872ece91ec0f2d12",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:wrong_operands",
+      "family": "calculation",
+      "source_clause": "计算温度与压力的相关系数",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "温度与日期相关系数",
+          "semantic_payload": {
+            "op": "correlation",
+            "operands": [
+              "temperature",
+              "date"
+            ]
+          },
+          "payload_digest": "ee6e723e35a24f7ad90087326be1bc5f71e613c214ee4ffca18cec1a89652bd9",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "压力与压力相关系数",
+          "semantic_payload": {
+            "op": "correlation",
+            "operands": [
+              "pressure",
+              "pressure"
+            ]
+          },
+          "payload_digest": "85060b19d35c2ab4ff5250b1214eafee3eaaa9e207293869a3b9cc1563d94e84",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "ed7ad001548f3bb54ebe57ab1c8c2d14dc764d9af2cb74363645a5aaab1fff3b",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:duration_ratio",
+      "family": "calculation",
+      "source_clause": "计算异常累计时长占当日总时长的比例",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "异常累计时长/当日总时长",
+          "semantic_payload": {
+            "op": "cumulative_duration_ratio",
+            "operands": [
+              "abnormal_duration",
+              "period_duration"
+            ]
+          },
+          "payload_digest": "5288288092267193ab74587708ffc55162b81c3c7c5ab0b9b4a2a754a4ca12ff",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "当日总时长/异常累计时长",
+          "semantic_payload": {
+            "op": "ratio",
+            "operands": [
+              "period_duration",
+              "abnormal_duration"
+            ]
+          },
+          "payload_digest": "43991e20c866a8cc3cb10c523a1b73f50401f6934ba42567af28fe50fe3c5702",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "7d4ea02e21bc6fac7ea42703c0ec953819ab46e2167c141e06f3fbc94e467644",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "5288288092267193ab74587708ffc55162b81c3c7c5ab0b9b4a2a754a4ca12ff",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "calculation:difference_ambiguous",
+      "family": "calculation",
+      "source_clause": "计算两个分组均值的差",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "A组均值-B组均值",
+          "semantic_payload": {
+            "op": "difference",
+            "operands": [
+              "avg_a",
+              "avg_b"
+            ]
+          },
+          "payload_digest": "b60968d9425c3fa696f582e18539afc29cef5f2005ad73c2e56b93f640d11b6d",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "B组均值-A组均值",
+          "semantic_payload": {
+            "op": "difference",
+            "operands": [
+              "avg_b",
+              "avg_a"
+            ]
+          },
+          "payload_digest": "1eb4d3a3d33968adc867edc468cb3e36fedccd2f834ef651670651c0e3dbd1e2",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "2081c1f03547934efbb6d1da2207b7822e6bc5d90fb4c7f2f79f9414559a9e20",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:these_dates",
+      "family": "reference",
+      "source_clause": "计算这些日期中的日平均温度",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "这些日期=交集日期",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "intersection_dates",
+            "type": "date"
+          },
+          "payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "这些日期=第一事件区间",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "event_a_intervals",
+            "type": "interval"
+          },
+          "payload_digest": "5d3b707a1f37c9764803c6de95b8f0c3162940ff822041202c2492dd930dcc19",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "0ee9ed77c1a18596a56f6f1b65369af58376b7456a0678688d420b68e55d4601",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:these_intervals",
+      "family": "reference",
+      "source_clause": "计算这些时间段内的峰值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "这些时间段=交集区间",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "intersection_intervals",
+            "type": "interval"
+          },
+          "payload_digest": "58ea0a1300cff4becf915a5c2a414a204ac58882126e6f9ae5b0c01e62735f92",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "这些时间段=交集日期",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "intersection_dates",
+            "type": "date"
+          },
+          "payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "ca599e185b513b1358fc9d65b40eabf16d025645d867e2e52642bede793ff5b6",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "58ea0a1300cff4becf915a5c2a414a204ac58882126e6f9ae5b0c01e62735f92",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:above_users",
+      "family": "reference",
+      "source_clause": "计算上述用户的平均消费金额",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "上述用户=筛选用户集合",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "filtered_users",
+            "type": "entity_set"
+          },
+          "payload_digest": "a16f75d1792266ed26c14abc44a3fa4a77405ea269ccb51d84122a335ba24bea",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "上述用户=全站用户",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "all_users",
+            "type": "entity_set"
+          },
+          "payload_digest": "3559f30a453da225d849e62b3ac3c3a7bb01e2e73c69b91b70d091122a8bb390",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "d81c1581d1af90d3e8dbfa010d3fd48c1fb109c93932f167dca9f2f03a0b091f",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "a16f75d1792266ed26c14abc44a3fa4a77405ea269ccb51d84122a335ba24bea",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:intersection_output",
+      "family": "reference",
+      "source_clause": "在交集内计算加速度标准差",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "交集=事件日期交集",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "intersection_dates",
+            "type": "date"
+          },
+          "payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "交集=事件区间交集",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "intersection_intervals",
+            "type": "interval"
+          },
+          "payload_digest": "58ea0a1300cff4becf915a5c2a414a204ac58882126e6f9ae5b0c01e62735f92",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "dd2ce11c6ad4376baaa935680bfd1044307db94873eb38a80fe478f82a2d1cb6",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:wrong_reference_type",
+      "family": "reference",
+      "source_clause": "计算这些日期中的温度",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "这些日期=事件区间",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "event_intervals",
+            "type": "interval"
+          },
+          "payload_digest": "c1da265f474f95f2d33a08a0e3b20b68124776d442a57ef02f32c64f4e493a94",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "这些日期=设备集合",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "devices",
+            "type": "entity_set"
+          },
+          "payload_digest": "c7f837c8a7adb6eb333ccf8b88ce7807fc0e389b65439adf07e79faa843bed82",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "30d9bb5a426546cf7e0e7a17c0762fa8c070ca00f5c5595dd81b1d8d1419826c",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:reference_ambiguous",
+      "family": "reference",
+      "source_clause": "计算这些结果的平均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "这些结果=日期集合",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "dates",
+            "type": "date"
+          },
+          "payload_digest": "c7e2cc15ad572557a57bfe04182190fb9f697a5f1d2237e4000fc24b97cb8713",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "这些结果=用户集合",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "users",
+            "type": "entity_set"
+          },
+          "payload_digest": "103fcb9ba76e1f9bde221c8aaad2fa572ae21b875a786fb662302386cdcc1766",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "b422b67a9cdecede0cd7fae94151767779db807e7814545d8ab7851c5009cde0",
+      "expected_decision": "ambiguous",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:stale_lineage",
+      "family": "reference",
+      "source_clause": "计算这些日期中的温度",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "这些日期=已失效旧轮次日期",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "stale_dates",
+            "type": "date",
+            "lineage": "stale"
+          },
+          "payload_digest": "68453fbdce0b0744ed4767c2249fd4f1ccad11794765f93d229a9d8bc39bd77d",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "这些日期=无来源日期",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "unbound_dates",
+            "type": "date",
+            "lineage": "missing"
+          },
+          "payload_digest": "da46557daca618dd19df0c6bd5d2b555b788b21258388c178546ca43101727d8",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "da13c977b75d46a7f438d629f12799f0129e2bfd9ce20f4e54d936a039373457",
+      "expected_decision": "none_of_above",
+      "expected_selected_payload_digest": "",
+      "expected_coverage_delta": 0,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    },
+    {
+      "oracle_id": "reference:aggregate_output",
+      "family": "reference",
+      "source_clause": "比较该平均值与全站平均值",
+      "expected_dispatch": "llm_choice",
+      "candidates": [
+        {
+          "summary": "该平均值=筛选用户平均值",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "filtered_avg",
+            "type": "number"
+          },
+          "payload_digest": "8cd978fbfa6ab929ba9a7b4d8fe6efce43ad6198a7710a0eba5395d3fe11bb37",
+          "alias": "choice_1"
+        },
+        {
+          "summary": "该平均值=日期集合",
+          "semantic_payload": {
+            "op": "resolve_reference",
+            "target": "dates",
+            "type": "date"
+          },
+          "payload_digest": "c7e2cc15ad572557a57bfe04182190fb9f697a5f1d2237e4000fc24b97cb8713",
+          "alias": "choice_2"
+        }
+      ],
+      "menu_digest": "5bd83bf5246948034e2157fd979709e45951131aa3e6e003b9b681531a7492d1",
+      "expected_decision": "select",
+      "expected_selected_payload_digest": "8cd978fbfa6ab929ba9a7b4d8fe6efce43ad6198a7710a0eba5395d3fe11bb37",
+      "expected_coverage_delta": 1,
+      "forbidden_outcomes": [
+        "semantic_payload_mutation",
+        "unknown_alias",
+        "stale_menu"
+      ]
+    }
+  ]
+}

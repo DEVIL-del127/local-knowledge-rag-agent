@@ -1,0 +1,45 @@
+# docker-compose.yaml - 修复版 v2
+# 修复点:
+# 1. version 已移除(compose v2 已弃用该字段, 会报警告)
+# 2. 默认使用 Elasticsearch 官方镜像，不依赖未纳入 Git 的本地插件目录。
+# 3. app 服务已注释: 项目没有 Dockerfile, build 会失败。
+#    日常使用: 只起 ES 容器(docker compose up -d), 程序在本地 venv 直接
+#    python main.py 运行。以后要容器化: 写好 Dockerfile 后取消注释即可。
+
+services:
+  elasticsearch: # ES服务
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    container_name: es-bm25
+    environment:
+      - discovery.type=single-node # 单节点模式
+      - xpack.security.enabled=false # 关闭安全认证(简化)
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # JVM内存限制
+    ports:
+      - "9200:9200" # 标准ES端口: main.py/config.py 默认即 9200, 无需设 ES_PORT
+      - "9300:9300" # 集群通信端口
+    volumes:
+      - es_data:/usr/share/elasticsearch/data # 数据持久化
+    networks:
+      - es-network
+
+  # app: # 应用服务 - 暂不可用(项目无 Dockerfile), 本地运行请直接 python main.py
+  #   build: .
+  #   container_name: pdf-processor
+  #   depends_on:
+  #     - elasticsearch
+  #   volumes:
+  #     - ./pdfs:/app/pdfs
+  #     - ./output:/app/output
+  #   environment:
+  #     - ES_HOST=elasticsearch
+  #     - ES_PORT=9200
+  #     - RUN_IN_DOCKER=1
+  #   networks:
+  #     - es-network
+
+volumes:
+  es_data:
+
+networks:
+  es-network:
+    driver: bridge

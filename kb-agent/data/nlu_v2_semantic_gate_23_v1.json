@@ -1,0 +1,29 @@
+{
+  "schema_version": "nlu_v2_semantic_gate_v1",
+  "description": "M1.2 frozen structural and validation gate. Expected values are authored independently of runtime output.",
+  "cases": [
+    {"id": 1, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1, "ARITHMETIC": 1}},
+    {"id": 2, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1, "ARITHMETIC": 1}},
+    {"id": 12, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1}},
+    {"id": 15, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1, "ARITHMETIC": 1}},
+    {"id": 23, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1, "GROUP_BY": 1, "TOP_K": 1}},
+    {"id": 31, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1, "ARITHMETIC": 1}},
+    {"id": 42, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 1, "SCOPED_AGGREGATE": 1, "COMPARE": 1, "GROUP_BY": 1}},
+    {"id": 51, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 2, "INTERSECTION": 1}},
+    {"id": 63, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 1, "ARITHMETIC": 1}},
+    {"id": 64, "expected_status": "needs_clarification", "required_operators": {"SEQUENCE": 1, "ARITHMETIC": 1}},
+    {"id": 69, "expected_status": "needs_clarification", "required_operators": {"RESETTABLE_SCAN": 1}},
+    {"id": 71, "expected_status": "needs_clarification", "required_ambiguities": ["timezone_fold"], "forbidden_errors": ["requirement_uncovered"]},
+    {"id": 77, "expected_status": "needs_clarification", "required_uncovered_requirements": ["conversion"]},
+    {"id": 78, "expected_status": "needs_clarification", "required_ambiguities": ["temporal_century"]},
+    {"id": 80, "expected_status": "needs_clarification", "required_operators": {"CONSECUTIVE": 1}},
+    {"id": 83, "expected_status": "needs_clarification", "required_errors": ["context_required"]},
+    {"id": 84, "expected_status": "valid", "required_operators": {"TURN_REPLACE": 1}},
+    {"id": 89, "expected_status": "needs_clarification", "required_ambiguities": ["formula_ambiguity"]},
+    {"id": 91, "expected_status": "unsupported", "required_errors": ["write_operation"]},
+    {"id": 92, "expected_status": "valid", "forbidden_errors": ["write_operation"], "required_annotations": ["prompt_injection_evidence"]},
+    {"id": 95, "expected_status": "needs_clarification", "required_operators": {"UNSATISFIABLE": 1}, "required_errors": ["unsatisfiable_constraints"]},
+    {"id": 98, "expected_status": "needs_clarification", "max_model_calls": 1},
+    {"id": 100, "expected_status": "needs_clarification", "required_errors": ["context_required"], "max_model_calls": 1}
+  ]
+}

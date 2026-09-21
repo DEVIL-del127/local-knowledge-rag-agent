@@ -1,0 +1,47 @@
+{
+  "schema_version": "v1a-acceptance-protocol-1",
+  "status": "agent_authored_v2_core_routing_passed",
+  "core_corpus": {
+    "total": 200,
+    "strata": {
+      "single_turn": 100,
+      "multi_turn": 50,
+      "multitask_negation": 25,
+      "out_of_scope_ambiguous": 25
+    },
+    "split": "acceptance",
+    "required_fields": [
+      "id",
+      "split",
+      "stratum",
+      "template_group",
+      "query",
+      "expected"
+    ],
+    "multi_turn_required_fields": [
+      "conversation_id",
+      "precondition"
+    ]
+  },
+  "hard_gates": {
+    "automatic_release_error_rate_max": 0.02,
+    "critical_errors_max": 0,
+    "warm_low_cost_p95_ms_max": 1000,
+    "unnecessary_clarifications_must_not_increase": true,
+    "incorrect_rejections_must_not_increase": true,
+    "multiturn_completions_must_not_decrease": true,
+    "added_correct_coverage_min": 1
+  },
+  "category_evidence": {
+    "development_minimum_releases": 20,
+    "new_release_region_minimum_independent_requests": 50,
+    "precision_min": 0.98,
+    "critical_errors_max": 0,
+    "report_wilson_interval": true
+  },
+  "notes": [
+    "The checked-in v2 corpus was authored and executed by the implementation agent under explicit user authorization; it is reproducible core-routing evidence, not a third-party blind set.",
+    "Cases used to diagnose or tune this candidate must move to development and be replaced.",
+    "This protocol file is not acceptance evidence."
+  ]
+}

@@ -1,0 +1,1063 @@
+{
+  "schema_version": "m15-deterministic-baseline-v1",
+  "ranker_source_blob_sha256": "8754e901a369d6f4b704674a2deb7457fe63d29c84279939b75c1a0d65a062a1",
+  "ranker_config": {
+    "baseline_version": "m15-lexical-ranker-v1",
+    "min_score": 0.35,
+    "min_margin": 0.1
+  },
+  "ranker_config_sha256": "e7548034c702b18ff4c8192ed6ee6acd4f00053ab52f4144aea67da748abcd3d",
+  "choice_oracle_sha256": "96572da0b28ecd4a6c6b8d293f72e0318f9f1f40a82ff028ecce32dcbd9d7072",
+  "rows": [
+    {
+      "oracle_id": "event:temp_high",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "a2e8f9d4dc027f7131bc5f6bf2f45895627c0a14f595029f7fa9344ac5951c04",
+            "score": 0.583333
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "474ee2497f31dd1576d4ac482134b3efc5255925a21679b5aaef045860eee913",
+            "score": 0.583333
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "event:accel_high",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "select",
+        "candidate_alias": "choice_1",
+        "payload_digest": "5996cf31efcf31d2371e126304124e1b9fe9303d73cf9239a6ab2abd62f11bb7",
+        "reason": "unique_lexical_winner",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "5996cf31efcf31d2371e126304124e1b9fe9303d73cf9239a6ab2abd62f11bb7",
+            "score": 0.642857
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "0435e42493f82ecaa84c47c2b01d7cd3f263a941320e9c9c01c02f4759e37020",
+            "score": 0.533333
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 1
+      }
+    },
+    {
+      "oracle_id": "event:wrong_field",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "c865ad28b31824fb261b3b933b7a2761b97988678d96720464eceb2cd2dda8c4",
+            "score": 0.333333
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "ea6fe0bc80ef3a3122b6609d6f7fe9b15d388e02c01907abd559e0103738a39d",
+            "score": 0.333333
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "event:event_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "68f55407d1b9640b9e20c0d089e902c2c12e89da21b38f41374c49aaf442d7a6",
+            "score": 0.3125
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "16156ac8478a52bc1bc647dab6958b346aa8f83f938f07488607007b02744c55",
+            "score": 0.3125
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "event:rated_speed",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "f3b0253440e0fd53f419435b2e96da173584f6eb0e5446c765322844ceb5bb18",
+            "score": 0.470588
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "45293ef0398384999b8569c070babd05e1599a4ceca6910b61ffb9dcd88ae00a",
+            "score": 0.4375
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "event:event_wrong_unit",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "select",
+        "candidate_alias": "choice_1",
+        "payload_digest": "3f29e8a08722ba2cb9aaad01d52d4c5cc05ddb9c166c58344892adb8582a8724",
+        "reason": "unique_lexical_winner",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "3f29e8a08722ba2cb9aaad01d52d4c5cc05ddb9c166c58344892adb8582a8724",
+            "score": 0.5
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "74231b5c306cb74836feba2ddf5d91a0adfdb952d9f48a906c95bcbd53cd4c04",
+            "score": 0.357143
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "event:pressure_low",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "1f29dad87ead2a0be2212d8d5e54641b9eb71a3958aac1483b0ffe52ee9ba5bf",
+            "score": 0.583333
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "27ba5fd0e57ada320ecbd6d684b202efe616cda6769925465e470226b897043d",
+            "score": 0.583333
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "event:boundary_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "341b456ec9130c1899de65091623c6ed80c29fa6458b86eeee3bde013f1adecd",
+            "score": 0.416667
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a2e8f9d4dc027f7131bc5f6bf2f45895627c0a14f595029f7fa9344ac5951c04",
+            "score": 0.416667
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:intersection_dates",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+            "score": 0.25
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "8e5c40376ed129facd09b2e35e0d2486c23da3c5915a20bb85d714125a4c4ef6",
+            "score": 0.153846
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:union_intervals",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_2",
+            "payload_digest": "e8b6c4e0d262083b100ed450e4efe380477c8604d6ee88e4d1a066c8c9ae611a",
+            "score": 0.142857
+          },
+          {
+            "alias": "choice_1",
+            "payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+            "score": 0.066667
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:difference",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "7dacd23e4ff092bb6e93be94d0751e8a0c54686a1906ae3f09615c281910669d",
+            "score": 0.214286
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "0cff119502b4ca413c0ee29f29bf257b7c9b4e347024d437e439fae1ec27b557",
+            "score": 0.214286
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:set_wrong_ops",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "8e5c40376ed129facd09b2e35e0d2486c23da3c5915a20bb85d714125a4c4ef6",
+            "score": 0.153846
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "7dacd23e4ff092bb6e93be94d0751e8a0c54686a1906ae3f09615c281910669d",
+            "score": 0.076923
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:set_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+            "score": 0.333333
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "8e5c40376ed129facd09b2e35e0d2486c23da3c5915a20bb85d714125a4c4ef6",
+            "score": 0.333333
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:same_producer",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "3141b38a808ed8f165ba92cfe5153b18c483d761fbb4313bd6c7d14bc6517ea8",
+            "score": 0.117647
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "cd3218651895ab48120cb721693c66a6a969d90355f960b0581e0ea9f2188ef3",
+            "score": 0.055556
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:interval_intersection",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+            "score": 0.142857
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+            "score": 0.142857
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "set:set_grain_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "1c92b8dac1ebe3bdb98d1dcc77c3f7924704799f7d9b804cdf637060bcfc9966",
+            "score": 0.071429
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a532a23efe0308fdf317e58154cf667261a76b287668f763a4f35bd281ae5186",
+            "score": 0.071429
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "aggregate:avg_efficiency",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "select",
+        "candidate_alias": "choice_1",
+        "payload_digest": "8ebf263429a8515bf595f40d5c3b85f2554953af20adab8d2b6aaca6f2ccce16",
+        "reason": "unique_lexical_winner",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "8ebf263429a8515bf595f40d5c3b85f2554953af20adab8d2b6aaca6f2ccce16",
+            "score": 0.375
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a93e19f499d350642999e39140106cd611af15099ee544aa72b172caeec08c64",
+            "score": 0.166667
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 1
+      }
+    },
+    {
+      "oracle_id": "aggregate:scoped_avg",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "select",
+        "candidate_alias": "choice_1",
+        "payload_digest": "3037ebf0bc5af57596216bae8b7b76229775bd775d9ad854b084210c7a5afd6e",
+        "reason": "unique_lexical_winner",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "3037ebf0bc5af57596216bae8b7b76229775bd775d9ad854b084210c7a5afd6e",
+            "score": 0.533333
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "253413a30fa2562583af98127ae4c767a4942f13438a83a2dc5adfad94dc36c9",
+            "score": 0.3125
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 1
+      }
+    },
+    {
+      "oracle_id": "aggregate:sum_sales",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "6b4f5ca1954294a8a7c25db835a5d068b96ff6b5bb0fde93499cbed644e1b509",
+            "score": 0.142857
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "04d90b7bbe3224e1d6f592c9578142094b7f2083442d33aa82b7ce19cdee6f21",
+            "score": 0.076923
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "aggregate:stddev_accel",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "9785afc0e9680033c2d3a13b008f48b802f965b1671b202e79ab7c4096c5e7ef",
+            "score": 0.285714
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "591d16fa309500d813bdb1d8c93781b4fd0df2f457796b5c065737bc9483d997",
+            "score": 0.133333
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "aggregate:aggregate_wrong_measure",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_2",
+            "payload_digest": "ab0939bc1d0f9c82be7673b720f3c6af0e1046906028d218372d5df01779d7b0",
+            "score": 0.2
+          },
+          {
+            "alias": "choice_1",
+            "payload_digest": "d482648f673f45373010be946de764b2d614663bb46410c291364d52d91c3272",
+            "score": 0.181818
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "aggregate:aggregate_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "e1800ab8bb7d224a92496119bd08b81796323f147a1c0912f1d2fadb1a88a8b6",
+            "score": 0.125
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "d3f5b6a6f833edf6053ccb4b798318a6837f47c47e3c135a77223f7cecd77a13",
+            "score": 0.125
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "aggregate:aggregate_date_hard_negative",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "7176a12f7d2717582d9682d59b6d022cc3ad661e2270ad09875d5c1d0ccf0f92",
+            "score": 0.230769
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "1225001f7251ae4a05f5d507ec4abbca24fa3e7f022aec0dfcb7fae1c2e35f23",
+            "score": 0.142857
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "aggregate:max_voltage",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "829dd047a8b697d4dba5b8a2da997b77eff6f48cde4480ff1f1e4e4182fe7fd4",
+            "score": 0.071429
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "b2e6d3d6d37297cc92953b9a7a8537f5fc4ffd749a020187a626f9728de99adc",
+            "score": 0.071429
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:ratio_order",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "73ee4f48f0145c756300db7a57225f4f5614c6273f64ac0d1e65d1796a3aed24",
+            "score": 0.454545
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a2598bf6047c93a0d9fb3c543231a7652f962848f678e2feefd56b7b950f316d",
+            "score": 0.454545
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:ratio_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "73ee4f48f0145c756300db7a57225f4f5614c6273f64ac0d1e65d1796a3aed24",
+            "score": 0.333333
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a2598bf6047c93a0d9fb3c543231a7652f962848f678e2feefd56b7b950f316d",
+            "score": 0.333333
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:correlation",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "select",
+        "candidate_alias": "choice_1",
+        "payload_digest": "ebcb4e99a04504ec0ebf27eee33045d8ff4d6089cf5a5f714e64bf8868d47f3b",
+        "reason": "unique_lexical_winner",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "ebcb4e99a04504ec0ebf27eee33045d8ff4d6089cf5a5f714e64bf8868d47f3b",
+            "score": 0.45
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "2287202319495c994e0a6a4875e25775f3193008dcaf80d115ef3f56f3dd3e63",
+            "score": 0.190476
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 1
+      }
+    },
+    {
+      "oracle_id": "calculation:difference_order",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "a746e52058e0316fa56f0c92d14d021fe41faf718e040837b5827bf705bc9c27",
+            "score": 0.454545
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "a963a5411e8955b4d8a65bb233f6ff7b87a0382224395f56443709c1c5e9e2d2",
+            "score": 0.454545
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:stddev",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "f9b10e0519a3f329b02a13a666a34243c90ea9452034a786872ece91ec0f2d12",
+            "score": 0.0
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "8d06b696fc3670a8ef63c41a9788661f474cae236496e64e3b62626aed7fee46",
+            "score": 0.0
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:wrong_operands",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_2",
+            "payload_digest": "85060b19d35c2ab4ff5250b1214eafee3eaaa9e207293869a3b9cc1563d94e84",
+            "score": 0.384615
+          },
+          {
+            "alias": "choice_1",
+            "payload_digest": "ee6e723e35a24f7ad90087326be1bc5f71e613c214ee4ffca18cec1a89652bd9",
+            "score": 0.357143
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:duration_ratio",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "margin_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "5288288092267193ab74587708ffc55162b81c3c7c5ab0b9b4a2a754a4ca12ff",
+            "score": 0.5
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "43991e20c866a8cc3cb10c523a1b73f50401f6934ba42567af28fe50fe3c5702",
+            "score": 0.5
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "calculation:difference_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "b60968d9425c3fa696f582e18539afc29cef5f2005ad73c2e56b93f640d11b6d",
+            "score": 0.166667
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "1eb4d3a3d33968adc867edc468cb3e36fedccd2f834ef651670651c0e3dbd1e2",
+            "score": 0.166667
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:these_dates",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+            "score": 0.2
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "5d3b707a1f37c9764803c6de95b8f0c3162940ff822041202c2492dd930dcc19",
+            "score": 0.166667
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:these_intervals",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "58ea0a1300cff4becf915a5c2a414a204ac58882126e6f9ae5b0c01e62735f92",
+            "score": 0.285714
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+            "score": 0.285714
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:above_users",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_2",
+            "payload_digest": "3559f30a453da225d849e62b3ac3c3a7bb01e2e73c69b91b70d091122a8bb390",
+            "score": 0.2
+          },
+          {
+            "alias": "choice_1",
+            "payload_digest": "a16f75d1792266ed26c14abc44a3fa4a77405ea269ccb51d84122a335ba24bea",
+            "score": 0.176471
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:intersection_output",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "684fde45f83a5861a7701cadd664c77638749018cf1c31539e6c5e7bc18b0dc3",
+            "score": 0.0625
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "58ea0a1300cff4becf915a5c2a414a204ac58882126e6f9ae5b0c01e62735f92",
+            "score": 0.0625
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:wrong_reference_type",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "c1da265f474f95f2d33a08a0e3b20b68124776d442a57ef02f32c64f4e493a94",
+            "score": 0.230769
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "c7f837c8a7adb6eb333ccf8b88ce7807fc0e389b65439adf07e79faa843bed82",
+            "score": 0.230769
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:reference_ambiguous",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_1",
+            "payload_digest": "c7e2cc15ad572557a57bfe04182190fb9f697a5f1d2237e4000fc24b97cb8713",
+            "score": 0.230769
+          },
+          {
+            "alias": "choice_2",
+            "payload_digest": "103fcb9ba76e1f9bde221c8aaad2fa572ae21b875a786fb662302386cdcc1766",
+            "score": 0.230769
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:stale_lineage",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_2",
+            "payload_digest": "da46557daca618dd19df0c6bd5d2b555b788b21258388c178546ca43101727d8",
+            "score": 0.230769
+          },
+          {
+            "alias": "choice_1",
+            "payload_digest": "68453fbdce0b0744ed4767c2249fd4f1ccad11794765f93d229a9d8bc39bd77d",
+            "score": 0.1875
+          }
+        ],
+        "oracle_correct": true,
+        "expected_coverage_delta": 0
+      }
+    },
+    {
+      "oracle_id": "reference:aggregate_output",
+      "deterministic_abstain": {
+        "decision": "abstain",
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      },
+      "deterministic_ranker": {
+        "decision": "abstain",
+        "reason": "score_below_threshold",
+        "scores": [
+          {
+            "alias": "choice_2",
+            "payload_digest": "c7e2cc15ad572557a57bfe04182190fb9f697a5f1d2237e4000fc24b97cb8713",
+            "score": 0.230769
+          },
+          {
+            "alias": "choice_1",
+            "payload_digest": "8cd978fbfa6ab929ba9a7b4d8fe6efce43ad6198a7710a0eba5395d3fe11bb37",
+            "score": 0.214286
+          }
+        ],
+        "oracle_correct": false,
+        "expected_coverage_delta": 0
+      }
+    }
+  ]
+}

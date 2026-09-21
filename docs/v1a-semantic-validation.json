@@ -1,0 +1,1871 @@
+{
+  "schema_version": "v1a-semantic-evidence-1",
+  "model": "bge-m3",
+  "samples": 180,
+  "batch_latency_ms": 7903.04849948734,
+  "warm_single_query": {
+    "count": 30,
+    "p50_ms": 15.394499525427818,
+    "p95_ms": 18.032499589025974,
+    "max_ms": 25.91990027576685
+  },
+  "category_evidence": {
+    "passed": true,
+    "minimum_releases": 50,
+    "categories": {
+      "literature_find": {
+        "passed": true,
+        "checks": {
+          "minimum_releases": true,
+          "precision_gte_98pct": true,
+          "critical_errors_zero": true
+        },
+        "samples": 60,
+        "released": 60,
+        "correct": 60,
+        "precision": 1.0,
+        "precision_wilson95": [
+          0.93982814785791,
+          0.9999999999999998
+        ],
+        "critical_errors": 0
+      },
+      "literature_compare": {
+        "passed": true,
+        "checks": {
+          "minimum_releases": true,
+          "precision_gte_98pct": true,
+          "critical_errors_zero": true
+        },
+        "samples": 60,
+        "released": 59,
+        "correct": 58,
+        "precision": 0.9830508474576272,
+        "precision_wilson95": [
+          0.9100427403585771,
+          0.9970017660816444
+        ],
+        "critical_errors": 0
+      },
+      "general_chat": {
+        "passed": true,
+        "checks": {
+          "minimum_releases": true,
+          "precision_gte_98pct": true,
+          "critical_errors_zero": true
+        },
+        "samples": 60,
+        "released": 56,
+        "correct": 55,
+        "precision": 0.9821428571428571,
+        "precision_wilson95": [
+          0.9055436285060242,
+          0.9968407896580255
+        ],
+        "critical_errors": 0
+      }
+    }
+  },
+  "cases": [
+    {
+      "category": "literature_find",
+      "query": "帮我搜集联邦学习学术论文",
+      "predicted": "literature_find",
+      "score": 0.6784153978029887,
+      "margin": 0.07604485750198364,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集扩散模型学术论文",
+      "predicted": "literature_find",
+      "score": 0.6757761438687643,
+      "margin": 0.0877970655759176,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集视觉语言模型学术论文",
+      "predicted": "literature_find",
+      "score": 0.6583717068036398,
+      "margin": 0.07503219445546472,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集知识图谱学术论文",
+      "predicted": "literature_find",
+      "score": 0.7302675843238831,
+      "margin": 0.12208612759908044,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集因果推断学术论文",
+      "predicted": "literature_find",
+      "score": 0.6804771423339844,
+      "margin": 0.084507962067922,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集多模态检索学术论文",
+      "predicted": "literature_find",
+      "score": 0.7157989939053854,
+      "margin": 0.11613315343856812,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集神经架构搜索学术论文",
+      "predicted": "literature_find",
+      "score": 0.7013429800669352,
+      "margin": 0.13674211502075195,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集自监督学习学术论文",
+      "predicted": "literature_find",
+      "score": 0.7020596464474996,
+      "margin": 0.08643474181493127,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集边缘计算学术论文",
+      "predicted": "literature_find",
+      "score": 0.6837577819824219,
+      "margin": 0.08638183275858557,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "帮我搜集数字孪生学术论文",
+      "predicted": "literature_find",
+      "score": 0.6227799654006958,
+      "margin": 0.02953096230824792,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论联邦学习的文章",
+      "predicted": "literature_find",
+      "score": 0.5882191061973572,
+      "margin": 0.06061091025670373,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论扩散模型的文章",
+      "predicted": "literature_find",
+      "score": 0.6315224369366964,
+      "margin": 0.07350633541742968,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论视觉语言模型的文章",
+      "predicted": "literature_find",
+      "score": 0.6108614007631937,
+      "margin": 0.0629609227180481,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论知识图谱的文章",
+      "predicted": "literature_find",
+      "score": 0.6496723890304565,
+      "margin": 0.11135375499725342,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论因果推断的文章",
+      "predicted": "literature_find",
+      "score": 0.6108905871709188,
+      "margin": 0.05785679817199707,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论多模态检索的文章",
+      "predicted": "literature_find",
+      "score": 0.671705981095632,
+      "margin": 0.10820780197779345,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论神经架构搜索的文章",
+      "predicted": "literature_find",
+      "score": 0.6523582140604655,
+      "margin": 0.15638637542724604,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论自监督学习的文章",
+      "predicted": "literature_find",
+      "score": 0.5862286885579427,
+      "margin": 0.06397950649261475,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论边缘计算的文章",
+      "predicted": "literature_find",
+      "score": 0.6142146190007528,
+      "margin": 0.06029166777928674,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "找出讨论数字孪生的文章",
+      "predicted": "literature_find",
+      "score": 0.5591053366661072,
+      "margin": 0.0282915631930033,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出联邦学习领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.637990136941274,
+      "margin": 0.0872580806414287,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出扩散模型领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6275732318560282,
+      "margin": 0.10176801681518555,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出视觉语言模型领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6185737649599711,
+      "margin": 0.07438458998997999,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出知识图谱领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6526180505752563,
+      "margin": 0.11401946345965064,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出因果推断领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6173484126726786,
+      "margin": 0.07808466752370191,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出多模态检索领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6639473040898641,
+      "margin": 0.10100241502126062,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出神经架构搜索领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6665907303492228,
+      "margin": 0.12731657425562537,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出自监督学习领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6248330076535543,
+      "margin": 0.09101153413454699,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出边缘计算领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.6314652562141418,
+      "margin": 0.09225082397460938,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "给出数字孪生领域文献清单",
+      "predicted": "literature_find",
+      "score": 0.5904517968495687,
+      "margin": 0.06433416406313586,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅联邦学习相关出版物",
+      "predicted": "literature_find",
+      "score": 0.5952697396278381,
+      "margin": 0.10351025064786273,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅扩散模型相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6251115202903748,
+      "margin": 0.10032411416371667,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅视觉语言模型相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6216967701911926,
+      "margin": 0.10452169179916382,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅知识图谱相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6780098875363668,
+      "margin": 0.17981834212938946,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅因果推断相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6260112126668295,
+      "margin": 0.10845355192820239,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅多模态检索相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6724492708841959,
+      "margin": 0.15800746281941724,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅神经架构搜索相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6756873726844788,
+      "margin": 0.18313334385553998,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅自监督学习相关出版物",
+      "predicted": "literature_find",
+      "score": 0.5969554583231608,
+      "margin": 0.10166932145754493,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅边缘计算相关出版物",
+      "predicted": "literature_find",
+      "score": 0.6072762211163839,
+      "margin": 0.08087035020192468,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "查阅数字孪生相关出版物",
+      "predicted": "literature_find",
+      "score": 0.5478405157725016,
+      "margin": 0.052405277887980106,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找联邦学习方向代表作",
+      "predicted": "literature_find",
+      "score": 0.591091255346934,
+      "margin": 0.10371983051300043,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找扩散模型方向代表作",
+      "predicted": "literature_find",
+      "score": 0.6319906314214071,
+      "margin": 0.10690820217132568,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找视觉语言模型方向代表作",
+      "predicted": "literature_find",
+      "score": 0.60533740123113,
+      "margin": 0.09322082996368408,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找知识图谱方向代表作",
+      "predicted": "literature_find",
+      "score": 0.6352256139119467,
+      "margin": 0.1378247936566671,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找因果推断方向代表作",
+      "predicted": "literature_find",
+      "score": 0.5886130730311075,
+      "margin": 0.09492257237434382,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找多模态检索方向代表作",
+      "predicted": "literature_find",
+      "score": 0.6400943597157797,
+      "margin": 0.12290310859680176,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找神经架构搜索方向代表作",
+      "predicted": "literature_find",
+      "score": 0.6205389897028605,
+      "margin": 0.12476863463719684,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找自监督学习方向代表作",
+      "predicted": "literature_find",
+      "score": 0.6096985737482706,
+      "margin": 0.10863882303237915,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找边缘计算方向代表作",
+      "predicted": "literature_find",
+      "score": 0.6153548955917358,
+      "margin": 0.08850044012069702,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "寻找数字孪生方向代表作",
+      "predicted": "literature_find",
+      "score": 0.5655090808868408,
+      "margin": 0.052716225385665894,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选联邦学习研究",
+      "predicted": "literature_find",
+      "score": 0.6779700716336569,
+      "margin": 0.11993616819381714,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选扩散模型研究",
+      "predicted": "literature_find",
+      "score": 0.59945148229599,
+      "margin": 0.09423863887786865,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选视觉语言模型研究",
+      "predicted": "literature_find",
+      "score": 0.6394951343536377,
+      "margin": 0.12307186921437585,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选知识图谱研究",
+      "predicted": "literature_find",
+      "score": 0.6758854190508524,
+      "margin": 0.1665513515472412,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选因果推断研究",
+      "predicted": "literature_find",
+      "score": 0.6465832591056824,
+      "margin": 0.09566086530685425,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选多模态检索研究",
+      "predicted": "literature_find",
+      "score": 0.7162525852521261,
+      "margin": 0.16011706988016772,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选神经架构搜索研究",
+      "predicted": "literature_find",
+      "score": 0.6696249842643738,
+      "margin": 0.1794084409872691,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选自监督学习研究",
+      "predicted": "literature_find",
+      "score": 0.6254988710085551,
+      "margin": 0.09691653649012244,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选边缘计算研究",
+      "predicted": "literature_find",
+      "score": 0.6623533368110657,
+      "margin": 0.13376647233963013,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_find",
+      "query": "从库中筛选数字孪生研究",
+      "predicted": "literature_find",
+      "score": 0.6052318215370178,
+      "margin": 0.05582727988560998,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项联邦学习研究",
+      "predicted": "literature_compare",
+      "score": 0.6847633719444275,
+      "margin": 0.17851136128107703,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项扩散模型研究",
+      "predicted": "literature_compare",
+      "score": 0.6856475273768107,
+      "margin": 0.17557299137115479,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项视觉语言模型研究",
+      "predicted": "literature_compare",
+      "score": 0.6622689565022787,
+      "margin": 0.16343565781911218,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项知识图谱研究",
+      "predicted": "literature_compare",
+      "score": 0.6721241672833761,
+      "margin": 0.11115378141403198,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项因果推断研究",
+      "predicted": "literature_compare",
+      "score": 0.7133327722549438,
+      "margin": 0.20725599924723304,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项多模态检索研究",
+      "predicted": "literature_compare",
+      "score": 0.6954080859820048,
+      "margin": 0.08314734697341919,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项神经架构搜索研究",
+      "predicted": "literature_compare",
+      "score": 0.6205478509267172,
+      "margin": 0.04044133424758911,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项自监督学习研究",
+      "predicted": "literature_compare",
+      "score": 0.6622052788734436,
+      "margin": 0.15375771125157678,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项边缘计算研究",
+      "predicted": "literature_compare",
+      "score": 0.666654090086619,
+      "margin": 0.1274226109186808,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对照两项数字孪生研究",
+      "predicted": "literature_compare",
+      "score": 0.668417771657308,
+      "margin": 0.19317858417828881,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较联邦学习文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6467441121737162,
+      "margin": 0.07361712058385206,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较扩散模型文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6584983666737875,
+      "margin": 0.06982443730036425,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较视觉语言模型文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6651498476664225,
+      "margin": 0.09257419904073072,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较知识图谱文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6624263525009155,
+      "margin": 0.05446183681488037,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较因果推断文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6498269041379293,
+      "margin": 0.08053817351659143,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较多模态检索文章的技术路线",
+      "predicted": "literature_find",
+      "score": 0.6657043298085531,
+      "margin": 0.07497551043828332,
+      "released": true,
+      "correct": false,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较神经架构搜索文章的技术路线",
+      "predicted": "literature_find",
+      "score": 0.6407503088315328,
+      "margin": 0.009396294752756829,
+      "released": false,
+      "correct": false,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较自监督学习文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6502905686696371,
+      "margin": 0.05914318561553955,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较边缘计算文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6491872072219849,
+      "margin": 0.035611748695373535,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "比较数字孪生文章的技术路线",
+      "predicted": "literature_compare",
+      "score": 0.6587958335876465,
+      "margin": 0.11825867493947351,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇联邦学习论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7321550051371256,
+      "margin": 0.1607985496520996,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇扩散模型论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7101624409357706,
+      "margin": 0.13168364763259888,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇视觉语言模型论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7083512743314108,
+      "margin": 0.14400917291641235,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇知识图谱论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7230398058891296,
+      "margin": 0.1517090996106466,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇因果推断论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7471183737119039,
+      "margin": 0.1703725655873617,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇多模态检索论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7200484871864319,
+      "margin": 0.11112918456395471,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇神经架构搜索论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.6878775954246521,
+      "margin": 0.07005367676417029,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇自监督学习论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7273884614308676,
+      "margin": 0.1801612377166748,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇边缘计算论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7176884015401205,
+      "margin": 0.11424156030019128,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "指出多篇数字孪生论文的差别",
+      "predicted": "literature_compare",
+      "score": 0.7272646427154541,
+      "margin": 0.17929510275522864,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比联邦学习研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.618313709894816,
+      "margin": 0.13841212789217627,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比扩散模型研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6376892328262329,
+      "margin": 0.11037451028823853,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比视觉语言模型研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6303700606028239,
+      "margin": 0.12552724281946814,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比知识图谱研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6363217433293661,
+      "margin": 0.0918885270754497,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比因果推断研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.647294282913208,
+      "margin": 0.13201140364011132,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比多模态检索研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6350384553273519,
+      "margin": 0.07570372025171923,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比神经架构搜索研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.5943013827006022,
+      "margin": 0.03129994869232178,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比自监督学习研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6163022120793661,
+      "margin": 0.1223424871762594,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比边缘计算研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6403791109720866,
+      "margin": 0.08624285459518433,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "评比数字孪生研究的实验表现",
+      "predicted": "literature_compare",
+      "score": 0.6577332814534506,
+      "margin": 0.17044891913731897,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比联邦学习文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.7020567059516907,
+      "margin": 0.09593915939331055,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比扩散模型文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6702732642491659,
+      "margin": 0.09008830785751343,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比视觉语言模型文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6920567949612936,
+      "margin": 0.10274424155553186,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比知识图谱文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6900609731674194,
+      "margin": 0.058913250764211056,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比因果推断文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6872856616973877,
+      "margin": 0.11361118157704675,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比多模态检索文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6905232270558676,
+      "margin": 0.05938166379928589,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比神经架构搜索文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6831069787343343,
+      "margin": 0.027786652247111077,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比自监督学习文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.7092227538426717,
+      "margin": 0.09441443284352624,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比边缘计算文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6729899446169535,
+      "margin": 0.05917892853418982,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "对比数字孪生文献使用的数据",
+      "predicted": "literature_compare",
+      "score": 0.6891647179921468,
+      "margin": 0.1214024225870769,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳联邦学习论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.7163038849830627,
+      "margin": 0.16200061639149987,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳扩散模型论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.6894177993138632,
+      "margin": 0.15467397371927905,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳视觉语言模型论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.679410437742869,
+      "margin": 0.15653997659683228,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳知识图谱论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.7000229557355245,
+      "margin": 0.1324055393536886,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳因果推断论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.7014274994532267,
+      "margin": 0.15826098124186194,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳多模态检索论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.7246476809183756,
+      "margin": 0.1072320739428202,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳神经架构搜索论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.6752350727717081,
+      "margin": 0.08323085308074951,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳自监督学习论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.7186966141064962,
+      "margin": 0.14712254206339526,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳边缘计算论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.6895418365796407,
+      "margin": 0.13310315211613977,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "literature_compare",
+      "query": "归纳数字孪生论文结论的异同",
+      "predicted": "literature_compare",
+      "score": 0.7183624903361002,
+      "margin": 0.18977129459381104,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "早安",
+      "predicted": "general_chat",
+      "score": 0.6428281664848328,
+      "margin": 0.17606258392333984,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "午安",
+      "predicted": "general_chat",
+      "score": 0.5505367517471313,
+      "margin": 0.15184757113456726,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "晚上见",
+      "predicted": "general_chat",
+      "score": 0.6158977945645651,
+      "margin": 0.15437234441439313,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "最近过得好吗",
+      "predicted": "general_chat",
+      "score": 0.6059645215670267,
+      "margin": 0.17425678173700965,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "很开心认识你",
+      "predicted": "general_chat",
+      "score": 0.7286390860875448,
+      "margin": 0.32328652342160547,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "感谢解答",
+      "predicted": "general_chat",
+      "score": 0.7169583837191263,
+      "margin": 0.20972792307535804,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "非常感谢",
+      "predicted": "general_chat",
+      "score": 0.732001523176829,
+      "margin": 0.2996930082639058,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "麻烦你了",
+      "predicted": "general_chat",
+      "score": 0.6955903768539429,
+      "margin": 0.18575728933016455,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "辛苦啦",
+      "predicted": "general_chat",
+      "score": 0.6440009077390035,
+      "margin": 0.20135485132535302,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "拜拜",
+      "predicted": "general_chat",
+      "score": 0.5570717453956604,
+      "margin": 0.2054229776064555,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "说个幽默故事",
+      "predicted": "general_chat",
+      "score": 0.7248695294062296,
+      "margin": 0.2846902211507161,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "来一句俏皮话",
+      "predicted": "general_chat",
+      "score": 0.6940207481384277,
+      "margin": 0.24758167068163556,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "逗我笑一笑",
+      "predicted": "general_chat",
+      "score": 0.6336882511774699,
+      "margin": 0.20692513386408484,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "讲个睡前故事",
+      "predicted": "general_chat",
+      "score": 0.6887855529785156,
+      "margin": 0.2354126175244649,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "说个轻松段子",
+      "predicted": "general_chat",
+      "score": 0.7372275988260905,
+      "margin": 0.2669543325901031,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一句毕业祝福",
+      "predicted": "general_chat",
+      "score": 0.6570375363032023,
+      "margin": 0.17258523901303607,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一条欢迎消息",
+      "predicted": "general_chat",
+      "score": 0.7263114253679911,
+      "margin": 0.28387708465258277,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "给朋友一句鼓励",
+      "predicted": "general_chat",
+      "score": 0.7011269132296244,
+      "margin": 0.2545071641604105,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "起草普通通知",
+      "predicted": "general_chat",
+      "score": 0.5861672163009644,
+      "margin": 0.12591663002967834,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "拟一个活动名称",
+      "predicted": "general_chat",
+      "score": 0.6358448266983032,
+      "margin": 0.13261394699414575,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "把这句话译成中文",
+      "predicted": "general_chat",
+      "score": 0.6680615345637003,
+      "margin": 0.21874688069025672,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "调整这段话的语气",
+      "predicted": "general_chat",
+      "score": 0.6852811376253763,
+      "margin": 0.18275682131449378,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "改成更正式的表达",
+      "predicted": "general_chat",
+      "score": 0.6416388948758444,
+      "margin": 0.141278882821401,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一个个人简介",
+      "predicted": "general_chat",
+      "score": 0.6067764163017273,
+      "margin": 0.11323608954747516,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "提供复习建议",
+      "predicted": "general_chat",
+      "score": 0.6701389153798422,
+      "margin": 0.09598469734191895,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "通俗解释循环",
+      "predicted": "general_chat",
+      "score": 0.5582003990809122,
+      "margin": 0.1488442023595174,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "简单介绍上海",
+      "predicted": "general_chat",
+      "score": 0.46929330627123517,
+      "margin": 0.12404332558314007,
+      "released": false,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "谈谈如何安排时间",
+      "predicted": "general_chat",
+      "score": 0.6395823756853739,
+      "margin": 0.14225226640701288,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "怎样改善睡眠",
+      "predicted": "general_chat",
+      "score": 0.5859940449396769,
+      "margin": 0.11040062705675757,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一段感谢同事的话",
+      "predicted": "general_chat",
+      "score": 0.6708455085754395,
+      "margin": 0.23269783457120258,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "推荐轻松的漫画",
+      "predicted": "general_chat",
+      "score": 0.6830807129542033,
+      "margin": 0.20400654276212055,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "推荐喜剧电影",
+      "predicted": "general_chat",
+      "score": 0.6478333075841268,
+      "margin": 0.22678409020106,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "推荐舒缓音乐",
+      "predicted": "general_chat",
+      "score": 0.7265505194664001,
+      "margin": 0.2801298201084137,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "推荐家常菜",
+      "predicted": "general_chat",
+      "score": 0.6546790798505148,
+      "margin": 0.16544627149899804,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "推荐周末活动",
+      "predicted": "general_chat",
+      "score": 0.7807279030481974,
+      "margin": 0.3005045652389526,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "今天有点开心",
+      "predicted": "general_chat",
+      "score": 0.666196604569753,
+      "margin": 0.20729581514994305,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "晚餐有什么建议",
+      "predicted": "general_chat",
+      "score": 0.7197920282681783,
+      "margin": 0.2587406933307648,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "周末去哪里玩",
+      "predicted": "general_chat",
+      "score": 0.7186766266822815,
+      "margin": 0.3240832984447479,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "聊聊兴趣爱好",
+      "predicted": "general_chat",
+      "score": 0.6591764688491821,
+      "margin": 0.16180413961410522,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "说一句晚安",
+      "predicted": "general_chat",
+      "score": 0.693647563457489,
+      "margin": 0.2540626327196757,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "回答简洁一些",
+      "predicted": "general_chat",
+      "score": 0.6389389236768087,
+      "margin": 0.12417453527450562,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "换个更自然的说法",
+      "predicted": "general_chat",
+      "score": 0.623439888159434,
+      "margin": 0.1212668319543202,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "改得活泼一点",
+      "predicted": "general_chat",
+      "score": 0.6434874137242635,
+      "margin": 0.1594416201114655,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "改得严谨一点",
+      "predicted": "general_chat",
+      "score": 0.629400630791982,
+      "margin": 0.08966720104217529,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "给我一个生活小技巧",
+      "predicted": "general_chat",
+      "score": 0.7223058144251505,
+      "margin": 0.24053623278935748,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "祝面试成功",
+      "predicted": "general_chat",
+      "score": 0.6880948543548584,
+      "margin": 0.21672798196474713,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一句开场白",
+      "predicted": "general_chat",
+      "score": 0.6496415535608927,
+      "margin": 0.1885228852430979,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "想一个网名",
+      "predicted": "general_chat",
+      "score": 0.6255940198898315,
+      "margin": 0.12363651394844055,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一条节日问候",
+      "predicted": "general_chat",
+      "score": 0.6791355411211649,
+      "margin": 0.26953367392222083,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "感谢并告别",
+      "predicted": "general_chat",
+      "score": 0.6501235167185465,
+      "margin": 0.275749921798706,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "解释什么是变量",
+      "predicted": "general_chat",
+      "score": 0.472011794646581,
+      "margin": 0.0654355486234029,
+      "released": false,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "说明缓存的用途",
+      "predicted": "general_chat",
+      "score": 0.5012513001759847,
+      "margin": 0.036128153403600094,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "介绍常见排序方法",
+      "predicted": "literature_compare",
+      "score": 0.5336234966913859,
+      "margin": 0.02583845456441236,
+      "released": true,
+      "correct": false,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "解释云计算概念",
+      "predicted": "general_chat",
+      "score": 0.4484049181143443,
+      "margin": 0.0672161877155304,
+      "released": false,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "说明什么是接口",
+      "predicted": "general_chat",
+      "score": 0.49295977751413983,
+      "margin": 0.0801335672537486,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一封预约邮件",
+      "predicted": "general_chat",
+      "score": 0.6533215045928955,
+      "margin": 0.15552831689516705,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "写一个会议提醒",
+      "predicted": "general_chat",
+      "score": 0.6155472199122111,
+      "margin": 0.054887473583221436,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "润色工作总结",
+      "predicted": "general_chat",
+      "score": 0.49935192863146466,
+      "margin": 0.0008479158083598004,
+      "released": false,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "翻译日常问候",
+      "predicted": "general_chat",
+      "score": 0.6783193548520406,
+      "margin": 0.2608716189861298,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    },
+    {
+      "category": "general_chat",
+      "query": "给新人一些建议",
+      "predicted": "general_chat",
+      "score": 0.6568318009376526,
+      "margin": 0.1889125307401021,
+      "released": true,
+      "correct": true,
+      "critical_error": false
+    }
+  ]
+}

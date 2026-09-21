@@ -1,0 +1,16 @@
+[
+  {"query": "2024年的ESN论文有哪些，还有关于GAN的", "expected": 2},
+  {"query": "去年发了哪些论文，今年呢", "expected": 2},
+  {"query": "2024年的论文，讲贝叶斯的那篇", "expected": 1},
+  {"query": "2024年的ESN论文有哪些 GAN的也行", "expected": 2},
+  {"query": "2024年的论文有哪些，还有关于GAN的，张昭昭的呢", "expected": 3},
+  {"query": "非典结束到现在，中国公共卫生体系的论文有哪些", "expected": 2},
+  {"query": "帮我看看2024年的论文，讲贝叶斯的", "expected": 1},
+  {"query": "2024年的论文有哪些，去年呢", "expected": 2},
+  {"query": "找贝叶斯的论文，顺便看看ESN的", "expected": 2},
+  {"query": "2024年的论文，还有2022年的呢", "expected": 2},
+  {"query": "讲贝叶斯的论文，还有ESN的", "expected": 2},
+  {"query": "2024年的论文里有没有讲贝叶斯的", "expected": 1},
+  {"query": "疫情期间的论文，还有张昭昭的呢", "expected": 2},
+  {"query": "2024年的论文有哪些，顺便看看ESN的，张昭昭的呢", "expected": 3}
+]

@@ -1,0 +1,45 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+
+# Secrets and local runtime state
+.env
+.env.*
+!.env.example
+agent_state/
+data/ingestion/staging/
+data/ingestion/reports/*.bin
+
+# Local parser/model caches
+.cache/
+.idea/
+.lock/
+.pytest_cache/
+
+# Generated runtime and local data
+logs/
+output/
+pdfs/
+plugins/
+vector_db/
+tests/vector_db/
+agent_state/
+/data/
+_m1_staging/
+_skill_staging/
+
+# Generated NLU/acceptance results (test sources belong under tests/)
+kb-agent/test/
+kb-agent/test1/
+kb-agent/test2/
+kb-agent/test_m*_acceptance*/
+kb-agent/docs/reports/*.json
+kb-agent/docs/reports/*.xml

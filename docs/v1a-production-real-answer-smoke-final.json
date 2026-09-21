@@ -1,0 +1,217 @@
+{
+  "schema_version": "v1a-production-real-answer-smoke-v1",
+  "created_at_utc": "2026-09-21T01:36:29.019233+00:00",
+  "run_id": "20260921T013509-f96cd078",
+  "assembly": "agent.application.build_application",
+  "execution_profile": "enforce",
+  "external_answer_model": true,
+  "understanding_model": false,
+  "fresh_state_directory": true,
+  "total": 8,
+  "passed_count": 8,
+  "passed": true,
+  "cases": [
+    {
+      "id": "P01",
+      "kind": "topic_qa",
+      "query": "ESN是什么？",
+      "state": "complete",
+      "business_outcome": "answered",
+      "reason_code": "grounded_answer_complete",
+      "evidence_count": 34,
+      "model_calls": 1,
+      "comparison_coverage": {},
+      "result_page": {},
+      "elapsed_ms": 10251.356,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true
+      },
+      "passed": true,
+      "answer_excerpt": "## ESN 是什么\n\n**ESN（echo state network，回声状态网络）** 是一种具有强大非线性时间序列建模能力和高效训练方式的神经网络模型，由 Jaeger 等提出 [E1]。它也可以被理解为一种新型 RNN 改进模型，用于解决传统 RNN 中存在的梯度消失和爆炸问题 [E2]。\n\n---\n\n### 1. 基本结构\n\nESN 通常由三层构成：\n\n- **输入层**：接收输入信号 [E2]。\n- **动态储备池（储层）**：替代传统 RNN 的隐含层，内部包含多个随机稀疏连接的神经元，用于处理输入层信号和储备池自身上一时刻的信号 [E2]。经典 ESN 中，若输入层、储层、输出层神经元节点数分别为 K、N、L，则可用相应状态矩阵与输出矩阵描述其更新过程 [E3]。\n- **输出层**：产生输出信号 [E2]。\n\n---\n\n### 2. 训练特点\n\nESN 的核心训练特点在于：\n\n- 输入层到储备池的连接权值 \\(W^{in}\\) 和储备池内部连接权值 \\(W\\) 在随机初始化后**保持不变**；\n- 只有储备池到输出层的连接权值 \\(W^{out}\\) 需要通过训练得"
+    },
+    {
+      "id": "P02",
+      "kind": "explicit_document_qa",
+      "query": "《Adaptive model based on ESN for anomaly detection in industrial systems.pdf》的结论是什么？",
+      "state": "complete",
+      "business_outcome": "answered",
+      "reason_code": "grounded_answer_complete",
+      "evidence_count": 5,
+      "model_calls": 1,
+      "comparison_coverage": {},
+      "result_page": {},
+      "elapsed_ms": 11725.049,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true
+      },
+      "passed": true,
+      "answer_excerpt": "根据检索到的证据，该论文的结论性内容可概括如下。下文以 [E1] 指代文档 p13 的结论段，以 [E2] 指代 p14 的局限与未来工作段。\n\n1. **离线 ESN 模型可用于可视化异常**  \n   使用为本地工厂训练的离线 ESN 模型，可以通过颜色图中误差的增大来可视化**渐变异常**和**临时异常**。[E1]\n\n2. **离线模型跨厂应用时需要在线自适应**  \n   当把离线模型切换到远程工厂时，它会持续检测到异常，因此需要适应新系统的动态。为此，论文采用在线模型；该在线模型能够适应被建模系统的差异，同时仍允许可视化产生的渐变或临时异常。[E1]\n\n3. **实验验证了工业过程的变化与单模型自适应预测的可行性**  \n   该工作实验确认：即使工厂设计和仪表相同，工业过程也可能发生变化；并且可以用一个能够适应系统变化的单一模型来预测此类工厂的行为。[E1]\n\n4. **可视觉识别多种异常/故障**  \n   论文表明能够视觉识别被建模系统中发生的异常或故障，既包括临时性异常，也包括由过程渐进退化引起的异常。[E1]\n\n5. **局限与未来工作**  \n   作者也指出："
+    },
+    {
+      "id": "P03",
+      "kind": "summary",
+      "query": "总结《1-s2.0-S0925231221011309-main的全文翻译.pdf》的方法和结论",
+      "state": "complete",
+      "business_outcome": "answered",
+      "reason_code": "grounded_answer_complete",
+      "evidence_count": 5,
+      "model_calls": 2,
+      "comparison_coverage": {},
+      "result_page": {},
+      "elapsed_ms": 23846.25,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true
+      },
+      "passed": true,
+      "answer_excerpt": " [1-s2.0-S0925231221011309-main的全文翻译.pdf]"
+    },
+    {
+      "id": "P04",
+      "kind": "explicit_compare",
+      "query": "比较《Adaptive model based on ESN for anomaly detection in industrial systems.pdf》和《1-s2.0-S0925231221011309-main的全文翻译.pdf》的方法和结论",
+      "state": "complete",
+      "business_outcome": "answered",
+      "reason_code": "grounded_answer_complete",
+      "evidence_count": 14,
+      "model_calls": 2,
+      "comparison_coverage": {
+        "comparison_dimensions": [
+          "method",
+          "conclusion"
+        ],
+        "complete": true,
+        "covered_object_count": 2,
+        "covered_object_ids": [
+          "989c8a6b72972c0e17bdd674",
+          "ce6ae783e05aa5297ee3d656"
+        ],
+        "dimension_coverage": {
+          "989c8a6b72972c0e17bdd674": {
+            "conclusion": true,
+            "method": true
+          },
+          "ce6ae783e05aa5297ee3d656": {
+            "conclusion": true,
+            "method": true
+          }
+        },
+        "dimensions_complete": true,
+        "required_object_count": 2,
+        "selection_policy": "explicit_pair"
+      },
+      "result_page": {},
+      "elapsed_ms": 23509.996,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true,
+        "comparison_complete": true
+      },
+      "passed": true,
+      "answer_excerpt": " [Adaptive model based on ESN for anomaly detection in industrial systems.pdf]"
+    },
+    {
+      "id": "P05",
+      "kind": "multiturn_reference",
+      "query": "第二篇讲什么？",
+      "state": "complete",
+      "business_outcome": "answered",
+      "reason_code": "grounded_answer_complete",
+      "evidence_count": 17,
+      "model_calls": 1,
+      "comparison_coverage": {},
+      "result_page": {},
+      "elapsed_ms": 7438.396,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true
+      },
+      "passed": true,
+      "answer_excerpt": "## 先说明：证据不足以确定“第二篇”指哪一篇\n\n当前知识库检索到的证据**只包含一篇文档**：《具有双储层结构的动态误差补偿回声状态网络》（张昭昭、朱应钦、余文，《控制理论与应用》2024, 41(3): 385-395）[E1]。没有任何文档顺序、目录或“第二篇”的指代信息，因此**无法判断你所问的“第二篇”是否就是这篇**，也无法按“第二篇”的序号作答。\n\n如果你的知识库里确实有序号编排的文献列表，目前缺少的是：文档清单/目录（标明篇序）、或“第二篇”的标题关键词。请补充其中之一，我再定位。\n\n---\n\n## 若“第二篇”指的就是《具有双储层结构的动态误差补偿回声状态网络》，其内容概括如下\n\n**1. 研究问题**\n传统回声状态网络（ESN）难以有效应对高阶非线性复杂模型：最小二乘会使输出权重估计剧烈波动，岭回归虽降低方差但为有偏估计；高阶系统中误差自相关导致方差无法准确估计，进而难以精确建模 [E1]。\n\n**2. 提出的方法**\n提出一种双储层结构的误差补偿回声状态网络（ETRC）：网络由**计算层**和**补偿层**构成，计算层主要承担拟合任务，补偿层作为状态跟随器，实时补"
+    },
+    {
+      "id": "P06",
+      "kind": "empty_result",
+      "query": "查找1990年到1991年的ESN论文",
+      "state": "complete",
+      "business_outcome": "no_match",
+      "reason_code": "no_match",
+      "evidence_count": 0,
+      "model_calls": 0,
+      "comparison_coverage": {},
+      "result_page": {},
+      "elapsed_ms": 525.313,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true
+      },
+      "passed": true,
+      "answer_excerpt": "已检查当前知识库，但没有找到匹配内容。你可以换一个关键词或放宽条件。"
+    },
+    {
+      "id": "P07",
+      "kind": "necessary_clarification",
+      "query": "比较这两篇",
+      "state": "wait_user",
+      "business_outcome": "needs_clarification",
+      "reason_code": "missing_document_reference",
+      "evidence_count": 0,
+      "model_calls": 0,
+      "comparison_coverage": {},
+      "result_page": {},
+      "elapsed_ms": 353.298,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true,
+        "pending_clarification": true
+      },
+      "passed": true,
+      "answer_excerpt": "上一轮没有可定位的论文，请先指定论文标题。"
+    },
+    {
+      "id": "P08",
+      "kind": "inventory",
+      "query": "库里有多少篇，哪些还没入索引",
+      "state": "complete",
+      "business_outcome": "listed",
+      "reason_code": "inventory_listed",
+      "evidence_count": 0,
+      "model_calls": 0,
+      "comparison_coverage": {},
+      "result_page": {
+        "complete": true,
+        "generation_id": "g20260909t145034-81ec8a2d",
+        "has_more": false,
+        "item_count": 29,
+        "next_cursor": null,
+        "total_documents": 29
+      },
+      "elapsed_ms": 523.772,
+      "checks": {
+        "business_outcome": true,
+        "evidence_presence": true,
+        "terminal_state": true,
+        "citation_sources": true,
+        "inventory_page": true
+      },
+      "passed": true,
+      "answer_excerpt": "当前固定代际 g20260909t145034-81ec8a2d 共 29 篇已接受论文，本页展示 29 篇：\n1. 1-s2.0-S0925231221011309-main的全文翻译.pdf\n2. 1-s2.0-S0952197625001290-main.pdf\n3. 1-s2.0-S1877050925003059-main.pdf\n4. 2210.02040v3.pdf\n5. A Systematic Review of Edible Swiftlet's Nest (ESN) Nutritional bioactive compounds, health benefits as functional food, and recent development as bioactive ESN glycopeptide hydrolysate..pdf\n6. A new water level prediction model based on ESMD− VMD− WSD− ESN.pdf\n7. Adaptive model based on ESN for anomaly "
+    }
+  ]
+}

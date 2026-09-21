@@ -1,0 +1,27 @@
+{
+  "schema_version": "semantic_patch_v1",
+  "operation_types": [
+    "add_event",
+    "add_set_operation",
+    "add_aggregate",
+    "add_comparison",
+    "add_calculation",
+    "add_sequence",
+    "resolve_reference",
+    "add_ambiguity",
+    "add_turn_directive"
+  ],
+  "transaction_invariants": {
+    "requires_matching_base_ir_digest": true,
+    "requires_accepted_operation": true,
+    "requires_closed_target_gap": true,
+    "rejects_new_validation_errors": true,
+    "empty_patch_is_neutral": true,
+    "cache_only_committed_patch": true
+  },
+  "call_budget": {
+    "main": 1,
+    "schema_repair": 1,
+    "maximum": 2
+  }
+}

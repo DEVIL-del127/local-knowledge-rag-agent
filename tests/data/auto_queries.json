@@ -1,0 +1,254 @@
+[
+  {
+    "query": "326 有一些神经网络与贝叶斯方法的结合 如使用统计反向传播的神 系 将损失函数 5 修改为数学期望 经网络的分布识别 11 概率分布识别 28 19 蒙特卡罗或马尔可夫链 采样的神经网络 14 由于条件概",
+    "relevant": [
+      "1-s2.0-S0925231221011309-main的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "神经网络修剪 应用算法1和图 2 使得神经网络的点估计得到了改进 案例b 使用神经网络来近似统计属性 应用算法2和图3 使得分 布估计通过点估计模",
+    "relevant": [
+      "1-s2.0-S0925231221011309-main的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "Y wu e 下B的概率 其中E e 1 e q e k y k y k is为建模误差 为了得到索引 Eq 18 允许我们使用我们已经拥有的一些知识或信念 通常称为先 5 我们需要",
+    "relevant": [
+      "1-s2.0-S0925231221011309-main的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "h the network parameters and the fuzzy HardE tl e c Mtr o n M a6 1 T 2 R e1 c0 h9",
+    "relevant": [
+      "1-s2.0-S0952197625001290-main.pdf"
+    ]
+  },
+  {
+    "query": "fferential equations of the reservoir weight matrix is adjus",
+    "relevant": [
+      "1-s2.0-S0952197625001290-main.pdf"
+    ]
+  },
+  {
+    "query": "heenergyacrossvariousfrequencybandsbutdonotrecordthe SensorDataAugmentati",
+    "relevant": [
+      "1-s2.0-S0952197625001290-main.pdf"
+    ]
+  },
+  {
+    "query": "dparametersintheESNmodelareWo andbo makingthetrainingprocessparticularly efficient Aneffectivetech",
+    "relevant": [
+      "1-s2.0-S1877050925003059-main.pdf"
+    ]
+  },
+  {
+    "query": "rds PID ESN ControlSystem DeepLearning Temperaturecontrol 1 Introduct",
+    "relevant": [
+      "1-s2.0-S1877050925003059-main.pdf"
+    ]
+  },
+  {
+    "query": "ltemperature T 1 andthecontrolvariableoutputoftheESN Q ESN andinidentifyingpotentiala",
+    "relevant": [
+      "1-s2.0-S1877050925003059-main.pdf"
+    ]
+  },
+  {
+    "query": "SNEvisualizationofrecoveredirregularSinesdata the1stcolumnisforadroppingrate of30 the2ndcolumnforarateof50 a",
+    "relevant": [
+      "2210.02040v3.pdf"
+    ]
+  },
+  {
+    "query": "Table22 Irregulartimeseries 30 dropped Stocks Regular DiscriminativeScorePredictiveScore Stocks 30 dropp",
+    "relevant": [
+      "2210.02040v3.pdf"
+    ]
+  },
+  {
+    "query": "70 Figure20 DistributionsoftheMuJoCodata the1stcolumnisforadroppingrateof30 the2nd columnforarateof50",
+    "relevant": [
+      "2210.02040v3.pdf"
+    ]
+  },
+  {
+    "query": "已用于搜 索全局最小值 克服两种算法的缺点 索克隆模板 12 所提方法的算法如算法2所示 在这种算法中 改变 在开始之前 我们必须用至少n 1个",
+    "relevant": [
+      "CCE-2020-paper-25的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "r Mead算法的细胞神经网络训练方法 将该方法的训练结果 像处理任务的报道 与仅使用人工蜂群算法和Nelder Mead算法的训练结果进行了比较 在这项工作中 我们提出了一种ABC算法的修改 使 并与相关工作进",
+    "relevant": [
+      "CCE-2020-paper-25的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "源 并计算它们的花蜜量 旁观蜜蜂 OBs 是蜂群的后半部 分 它们被送到它们的来源并计算它们的花蜜量 最后 派出代表花蜜来源的",
+    "relevant": [
+      "CCE-2020-paper-25的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "后的测试 对农田数据库进行分析 对于这 个数据库 考虑了7组148个特征 并通过应用所提出的 神经网络的学习过程进行降维过程 图8中的图显示了 仅考虑三个输出特征时",
+    "relevant": [
+      "Metaheuristic_Method_for_Dimensionality_Reduction_Tasks的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "表ii ABC算法参数 图3 7为使用MNIST数据库形成的数据集的三维维 图 坐标轴与输出层中的每个神经元相关 分别标记为 维度1 2和3 对每个样本进行分析 并为其所属的类 分配颜色 它在图中的位置对应于从所提",
+    "relevant": [
+      "Metaheuristic_Method_for_Dimensionality_Reduction_Tasks的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "个或多个新 一组基于Matlab代码的手写数字和农田图像的实验 的损失项来观察的 的背景下 978 1 6654 5508 4 22 31 00 2022 IEEE Auth",
+    "relevant": [
+      "Metaheuristic_Method_for_Dimensionality_Reduction_Tasks的全文翻译.pdf"
+    ]
+  },
+  {
+    "query": "ivescores Metric Method Sines Stocks Energy Events TimeGAN 011 008 102 021 236 012 161 018 Discrimina",
+    "relevant": [
+      "NeurIPS-2019-time-series-generative-adversarial-networks-Paper.pdf"
+    ]
+  },
+  {
+    "query": "hoc evaluation models Implementation of TimeGAN can be found at https bitbucket org mvdschaa",
+    "relevant": [
+      "NeurIPS-2019-time-series-generative-adversarial-networks-Paper.pdf"
+    ]
+  },
+  {
+    "query": "hhhhaaaa1111 bbbbaaaasssseeee66664444 nnnnuuuullllllll nnnnuuuulllllll",
+    "relevant": [
+      "NeurIPS-2019-time-series-generative-adversarial-networks-Paper.pdf"
+    ]
+  },
+  {
+    "query": "Figures10and11areusedtopresentthepredictionresultsforthetwoairpollution indices ATIandPED 100 50 0 Data",
+    "relevant": [
+      "information-15-00222.pdf"
+    ]
+  },
+  {
+    "query": "iththeforecasts Thiscombinedapproachallowsformorerobustandreliableforecastinginthepresenceof missingd",
+    "relevant": [
+      "information-15-00222.pdf"
+    ]
+  },
+  {
+    "query": "lnL lnp i xi lnp xi 27 j k k i 1j 1 i 1 whereNisthetrainingdata",
+    "relevant": [
+      "information-15-00222.pdf"
+    ]
+  },
+  {
+    "query": "1 SchemediagramofESN ouslydeepreservoircomputing ADRC 18 通过延迟 使网络具有不同时刻信息的记忆能力 最终提升复杂 回声状态网络的本质是训练向量W 使特征矩阵 out 时",
+    "relevant": [
+      "具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf"
+    ]
+  },
+  {
+    "query": "W out Wout MX I P Wout M 4 系统的问题 通过理论与实验分析常规ESN预测高阶 根据式 4 可得偏差与方差的关系为",
+    "relevant": [
+      "具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf"
+    ]
+  },
+  {
+    "query": "tiondistributionsofETRC 10 6 10 3 4 8 补偿层输出 真实误差值 补偿层输出 2 6 真实误差值 0 4 2 2 4 0 6 2 8 4 100 200 300 400 500",
+    "relevant": [
+      "具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf"
+    ]
+  },
+  {
+    "query": "预测 Spatial Dynamic Wind Power Foresting SDWPF 数据集 31 其中包括134台风 其中 是无监督损失的权重系数",
+    "relevant": [
+      "回声信念网络及其在时间序列预测中的应用_张昭昭.pdf"
+    ]
+  },
+  {
+    "query": "的实验评估 考 在实验中 每个数据集被分为两个部分 分别 虑三个时间序列基准 Mackey Glass MG 系统 用于训练和测试 表1描述了不同数据集的参数配 多重叠加振荡器 Multiple su",
+    "relevant": [
+      "回声信念网络及其在时间序列预测中的应用_张昭昭.pdf"
+    ]
+  },
+  {
+    "query": "v x t D B Nv D B Nt h y t y t t in p u tt v t 2 v in p u t t h l L u n",
+    "relevant": [
+      "回声信念网络及其在时间序列预测中的应用_张昭昭.pdf"
+    ]
+  },
+  {
+    "query": "ANG Y CHUNG A C Deep supervision with addi Visual Science 200",
+    "relevant": [
+      "基于GAN的视网膜血管分割标签优化方法_王植炜.pdf"
+    ]
+  },
+  {
+    "query": "e auc 第1组原始 0 962 7 0 978 8 0 801 4 0 979 8 Ground Truth A S S D cc p e auc 第1组修正 0 962 2 0 98",
+    "relevant": [
+      "基于GAN的视网膜血管分割标签优化方法_王植炜.pdf"
+    ]
+  },
+  {
+    "query": "n New York IEEE 2017 1125 1134 1 FRAZ M M BARMAN S A REMAGNINO P et",
+    "relevant": [
+      "基于GAN的视网膜血管分割标签优化方法_王植炜.pdf"
+    ]
+  },
+  {
+    "query": "na 2024YFF0504702 SiYuan Collaborative Innovation Alli 150001 3 哈尔滨工业大学控制理论",
+    "relevant": [
+      "基于条件扩散模型的卫星遥测数据缺失值插补方法_庞昭辰.pdf"
+    ]
+  },
+  {
+    "query": "有通道中 根据均匀分布随机抽样插补掩码的 4 马达电流 0 23 零元素 通常考虑的是单个时间步长的缺失 随机 0 07",
+    "relevant": [
+      "基于条件扩散模型的卫星遥测数据缺失值插补方法_庞昭辰.pdf"
+    ]
+  },
+  {
+    "query": "相应的噪声预测网络的损失可定义为 将输入的形状固定为 L N 之后 通过一维卷积 调整数据维度为 B L N C C为通道数 以确 L E x c t 2 11 cid 18 t",
+    "relevant": [
+      "基于条件扩散模型的卫星遥测数据缺失值插补方法_庞昭辰.pdf"
+    ]
+  },
+  {
+    "query": "TLESN 仅提供了误差补偿值 缺乏对误差分 布的分析和预测不确定性的评估 因此 如何在保证误差补偿效果的同时 增加对预测 不确定性分析仍需要进一步研究 基于以上分析 本章设计了一种基于误差概率分布补",
+    "relevant": [
+      "论文刘月.pdf"
+    ]
+  },
+  {
+    "query": "0 8 435 0 654 0 657 0 402 0 227 1 449 1 064 8 240 0 519 0 407 0 319 0 067 turbine52 2 006 1 527 53 2",
+    "relevant": [
+      "论文刘月.pdf"
+    ]
+  },
+  {
+    "query": "4727520条数据 其中 由 134 个涡轮机每 10 分钟收集一 次数据 共245天数据 13个特征 风力发电数据的特征表示和相应含义如表5 1所示",
+    "relevant": [
+      "论文刘月.pdf"
+    ]
+  },
+  {
+    "query": "dels 方法类别 贝叶斯时空统计模型 模型优点 模型缺点 传统 时空演化规律 贝叶斯时空演化层次模型 可以捕捉总体和局部时空演化趋势 无法揭示时空影响机制 统计 分析类 BSTEHM 模型 全局时空影响 贝叶",
+    "relevant": [
+      "贝叶斯时空统计方法及应用进展与趋势_李俊明.pdf"
+    ]
+  },
+  {
+    "query": "urban air pollution dynamics C 60 Mougeni F Lell B Kandala NB et al",
+    "relevant": [
+      "贝叶斯时空统计方法及应用进展与趋势_李俊明.pdf"
+    ]
+  },
+  {
+    "query": "次时空模型在甘肃省 residents in China J Resources Science 2023 45 9 AOD时空分布中的应用 J 无线电工程 2023 53 3 1817 1829 DOI C",
+    "relevant": [
+      "贝叶斯时空统计方法及应用进展与趋势_李俊明.pdf"
+    ]
+  }
+]

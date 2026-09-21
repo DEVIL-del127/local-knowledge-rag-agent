@@ -1,0 +1,168 @@
+{
+  "schema_version": "m14-decision-oracle-v1",
+  "cases": [
+    {
+      "oracle_id": "event_case_001_temp",
+      "family": "event",
+      "source_case": 1,
+      "source_clause": "温度连续超过 85℃ 且持续超过 8 分钟",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"operator": "CONSECUTIVE", "field": "temp", "predicate": "gt", "value": 85, "unit": "celsius", "duration_operator": "gt", "duration_seconds": 480}],
+      "forbidden_semantics": [{"field": "speed"}, {"measure_role": "date"}]
+    },
+    {
+      "oracle_id": "event_case_018_efficiency",
+      "family": "event",
+      "source_case": 18,
+      "source_clause": "转换效率连续低于 18% 且持续超过 10 分钟",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"operator": "CONSECUTIVE", "field": "efficiency", "predicate": "lt", "value": 18, "unit": "percent", "duration_operator": "gt", "duration_seconds": 600}],
+      "forbidden_semantics": [{"field": "irradiance"}, {"measure_role": "date"}]
+    },
+    {
+      "oracle_id": "event_missing_duration",
+      "family": "event",
+      "source_case": 0,
+      "source_clause": "温度连续超过 85℃",
+      "expected_dispatch": "blocked_by_upstream",
+      "expected_decision": "no_model_call",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"decision": "select"}, {"decision": "none_of_above"}, {"decision": "ambiguous"}]
+    },
+    {
+      "oracle_id": "event_wrong_menu",
+      "family": "event",
+      "source_case": 1,
+      "source_clause": "温度连续超过 85℃ 且持续超过 8 分钟",
+      "expected_dispatch": "llm_choice",
+      "expected_decision": "none_of_above",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"field": "speed"}, {"predicate": "lt"}],
+      "fixture_mode": "wrong_menu_mutation"
+    },
+    {
+      "oracle_id": "set_case_008_dates",
+      "family": "set",
+      "source_case": 8,
+      "source_clause": "输出这两类异常时间段的交集日期",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"operation": "intersection", "grain": "date", "distinct_producers": true}],
+      "forbidden_semantics": [{"operation": "union"}, {"distinct_producers": false}]
+    },
+    {
+      "oracle_id": "set_case_017_intervals",
+      "family": "set",
+      "source_case": 17,
+      "source_clause": "输出这两类异常时间段的交集时间段",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"operation": "intersection", "grain": "interval", "distinct_producers": true}],
+      "forbidden_semantics": [{"grain": "date"}, {"distinct_producers": false}]
+    },
+    {
+      "oracle_id": "set_missing_event_output",
+      "family": "set",
+      "source_case": 0,
+      "source_clause": "输出两类事件的交集日期",
+      "expected_dispatch": "blocked_by_upstream",
+      "expected_decision": "no_model_call",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"decision": "select"}, {"decision": "none_of_above"}]
+    },
+    {
+      "oracle_id": "set_wrong_menu",
+      "family": "set",
+      "source_case": 8,
+      "source_clause": "输出这两类异常时间段的交集日期",
+      "expected_dispatch": "llm_choice",
+      "expected_decision": "none_of_above",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"operation": "union"}, {"operation": "difference"}],
+      "fixture_mode": "wrong_menu_mutation"
+    },
+    {
+      "oracle_id": "aggregate_case_018_efficiency_avg",
+      "family": "aggregate",
+      "source_case": 18,
+      "source_clause": "计算这些日期中，转换效率的日平均值",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"function": "avg", "measure": "efficiency", "scope": "intersection_dates", "group_by": ["local_date"], "result_type": "number"}],
+      "forbidden_semantics": [{"measure": "irradiance"}, {"measure_role": "date"}]
+    },
+    {
+      "oracle_id": "aggregate_case_014_scopes",
+      "family": "aggregate",
+      "source_case": 14,
+      "source_clause": "这些用户的平均累计消费金额 是否高于全站平均值的 1.5 倍",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"function": "avg", "measure": "total_spend", "scopes": ["filtered", "global"]}],
+      "forbidden_semantics": [{"measure": "login_days"}, {"measure_role": "date"}]
+    },
+    {
+      "oracle_id": "aggregate_unnamed_measure",
+      "family": "aggregate",
+      "source_case": 0,
+      "source_clause": "计算这些日期中的日平均值",
+      "expected_dispatch": "blocked_by_upstream",
+      "expected_decision": "no_model_call",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"decision": "select"}, {"decision": "ambiguous"}]
+    },
+    {
+      "oracle_id": "aggregate_wrong_menu",
+      "family": "aggregate",
+      "source_case": 18,
+      "source_clause": "计算这些日期中，转换效率的日平均值",
+      "expected_dispatch": "llm_choice",
+      "expected_decision": "none_of_above",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"measure": "irradiance"}, {"measure_role": "date"}],
+      "fixture_mode": "wrong_menu_mutation"
+    },
+    {
+      "oracle_id": "calculation_case_001_ratio",
+      "family": "calculation",
+      "source_case": 1,
+      "source_clause": "每日温度峰值与转速峰值的比值",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"function": "ratio", "operands": ["daily_max(temp)", "daily_max(speed)"]}],
+      "forbidden_semantics": [{"operands": ["daily_max(speed)", "daily_max(temp)"]}, {"operand_role": "date"}]
+    },
+    {
+      "oracle_id": "calculation_case_017_correlation",
+      "family": "calculation",
+      "source_case": 17,
+      "source_clause": "交集时间段内缺陷密度与良率的相关系数",
+      "expected_dispatch": "local_compile",
+      "expected_decision": "local_compile",
+      "allowed_semantics": [{"function": "correlation", "operands": ["defect_density", "yield_rate"], "scope": "intersection_intervals", "shared_grain": true}],
+      "forbidden_semantics": [{"operands": ["defect_density", "defect_density"]}, {"operand_role": "date"}, {"shared_grain": false}]
+    },
+    {
+      "oracle_id": "calculation_missing_input",
+      "family": "calculation",
+      "source_case": 0,
+      "source_clause": "计算温度与未声明指标的相关系数",
+      "expected_dispatch": "blocked_by_upstream",
+      "expected_decision": "no_model_call",
+      "allowed_semantics": [],
+      "forbidden_semantics": [{"decision": "select"}, {"decision": "none_of_above"}]
+    },
+    {
+      "oracle_id": "calculation_unspecified_ratio_order",
+      "family": "calculation",
+      "source_case": 0,
+      "source_clause": "计算温度峰值和转速峰值两者的比值",
+      "expected_dispatch": "llm_choice",
+      "expected_decision": "ambiguous",
+      "allowed_semantics": [{"function": "ratio", "operands": ["daily_max(temp)", "daily_max(speed)"]}, {"function": "ratio", "operands": ["daily_max(speed)", "daily_max(temp)"]}],
+      "forbidden_semantics": [{"operand_role": "date"}]
+    }
+  ]
+}

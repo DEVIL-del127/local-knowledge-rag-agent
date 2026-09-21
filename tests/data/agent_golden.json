@@ -1,0 +1,52 @@
+[
+  {
+    "query": "帮我查一下误差补偿回声状态网络的相关论文",
+    "expected_intent": "knowledge_search",
+    "expected_evidence": ["具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf", "论文刘月.pdf"]
+  },
+  {
+    "query": "刘月论文的主要研究方法是什么",
+    "expected_intent": "knowledge_search",
+    "expected_evidence": ["论文刘月.pdf"]
+  },
+  {
+    "query": "总结一下贝叶斯时空统计方法的进展",
+    "expected_intent": "knowledge_analysis",
+    "expected_evidence": ["贝叶斯时空统计方法及应用进展与趋势_李俊明.pdf"]
+  },
+  {
+    "query": "对比回声信念网络和回声状态网络",
+    "expected_intent": "knowledge_analysis",
+    "expected_evidence": ["回声信念网络及其在时间序列预测中的应用_张昭昭.pdf", "具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf"]
+  },
+  {
+    "query": "卫星遥测数据缺失值插补用什么方法",
+    "expected_intent": "knowledge_search",
+    "expected_evidence": ["基于条件扩散模型的卫星遥测数据缺失值插补方法_庞昭辰.pdf"]
+  },
+  {
+    "query": "GMDH是什么方法",
+    "expected_intent": "knowledge_search",
+    "expected_evidence": ["2210.02040v3.pdf"]
+  },
+  {
+    "query": "你好",
+    "expected_intent": "direct_chat",
+    "expected_evidence": []
+  },
+  {
+    "query": "你能做什么",
+    "expected_intent": "direct_chat",
+    "expected_evidence": []
+  },
+  {
+    "query": "我不需要你总结",
+    "expected_intent": "direct_chat",
+    "expected_evidence": []
+  },
+  {
+    "query": "嗯",
+    "expected_intent": "clarify",
+    "expected_evidence": []
+  }
+]

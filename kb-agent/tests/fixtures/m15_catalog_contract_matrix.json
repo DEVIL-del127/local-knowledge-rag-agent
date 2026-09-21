@@ -1,0 +1,479 @@
+{
+  "schema_version": "m15-catalog-contract-matrix-v1",
+  "contracts": [
+    {
+      "contract_id": "telemetry-ready",
+      "matched_group": "device",
+      "variant": "positive",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "telemetry.observed_at",
+          "type": "datetime",
+          "role": "timestamp"
+        },
+        {
+          "id": "telemetry.device_id",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "telemetry.temperature",
+          "aliases": [
+            "温度",
+            "temp"
+          ],
+          "type": "number",
+          "unit": "celsius"
+        },
+        {
+          "id": "telemetry.acceleration",
+          "aliases": [
+            "加速度"
+          ],
+          "type": "number",
+          "unit": "m/s2"
+        }
+      ],
+      "timestamp": "telemetry.observed_at",
+      "partition_keys": [
+        "telemetry.device_id"
+      ],
+      "ordering_key": "telemetry.observed_at",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "regular",
+        "interval_seconds": 2
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "event_segmentation",
+        "date_projection",
+        "aggregate"
+      ],
+      "expected_readiness_level": "logical_plan_ready"
+    },
+    {
+      "contract_id": "telemetry-no-segmentation",
+      "matched_group": "device",
+      "variant": "missing_capability",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "telemetry.observed_at",
+          "type": "datetime",
+          "role": "timestamp"
+        },
+        {
+          "id": "telemetry.device_id",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "telemetry.temperature",
+          "aliases": [
+            "温度",
+            "temp"
+          ],
+          "type": "number",
+          "unit": "celsius"
+        },
+        {
+          "id": "telemetry.acceleration",
+          "aliases": [
+            "加速度"
+          ],
+          "type": "number",
+          "unit": "m/s2"
+        }
+      ],
+      "timestamp": "telemetry.observed_at",
+      "partition_keys": [
+        "telemetry.device_id"
+      ],
+      "ordering_key": "telemetry.observed_at",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "regular",
+        "interval_seconds": 2
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "date_projection",
+        "aggregate"
+      ],
+      "expected_readiness_level": "event_capability_pending"
+    },
+    {
+      "contract_id": "telemetry-no-gap-policy",
+      "matched_group": "device",
+      "variant": "missing_policy",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "telemetry.observed_at",
+          "type": "datetime",
+          "role": "timestamp"
+        },
+        {
+          "id": "telemetry.device_id",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "telemetry.temperature",
+          "aliases": [
+            "温度",
+            "temp"
+          ],
+          "type": "number",
+          "unit": "celsius"
+        },
+        {
+          "id": "telemetry.acceleration",
+          "aliases": [
+            "加速度"
+          ],
+          "type": "number",
+          "unit": "m/s2"
+        }
+      ],
+      "timestamp": "telemetry.observed_at",
+      "partition_keys": [
+        "telemetry.device_id"
+      ],
+      "ordering_key": "telemetry.observed_at",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "regular",
+        "interval_seconds": 2
+      },
+      "policies": {
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "event_segmentation",
+        "date_projection",
+        "aggregate"
+      ],
+      "expected_readiness_level": "event_policy_pending"
+    },
+    {
+      "contract_id": "machine-duration-ready",
+      "matched_group": "manufacturing",
+      "variant": "positive",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "machine.observed_at",
+          "type": "datetime",
+          "role": "timestamp"
+        },
+        {
+          "id": "machine.machine_id",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "machine.vibration",
+          "aliases": [
+            "振动",
+            "振动幅度"
+          ],
+          "type": "number",
+          "unit": "mm/s"
+        }
+      ],
+      "timestamp": "machine.observed_at",
+      "partition_keys": [
+        "machine.machine_id"
+      ],
+      "ordering_key": "machine.observed_at",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "regular",
+        "interval_seconds": 0.1
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract",
+        "integration_method": "sampled_duration_next_interval"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "event_segmentation",
+        "duration_accumulation",
+        "aggregate"
+      ],
+      "expected_readiness_level": "logical_plan_ready"
+    },
+    {
+      "contract_id": "machine-no-duration",
+      "matched_group": "manufacturing",
+      "variant": "missing_capability",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "machine.observed_at",
+          "type": "datetime",
+          "role": "timestamp"
+        },
+        {
+          "id": "machine.machine_id",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "machine.vibration",
+          "aliases": [
+            "振动",
+            "振动幅度"
+          ],
+          "type": "number",
+          "unit": "mm/s"
+        }
+      ],
+      "timestamp": "machine.observed_at",
+      "partition_keys": [
+        "machine.machine_id"
+      ],
+      "ordering_key": "machine.observed_at",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "regular",
+        "interval_seconds": 0.1
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract",
+        "integration_method": "sampled_duration_next_interval"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "event_segmentation",
+        "aggregate"
+      ],
+      "expected_readiness_level": "duration_capability_pending"
+    },
+    {
+      "contract_id": "machine-no-integration-policy",
+      "matched_group": "manufacturing",
+      "variant": "missing_policy",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "machine.observed_at",
+          "type": "datetime",
+          "role": "timestamp"
+        },
+        {
+          "id": "machine.machine_id",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "machine.vibration",
+          "aliases": [
+            "振动",
+            "振动幅度"
+          ],
+          "type": "number",
+          "unit": "mm/s"
+        }
+      ],
+      "timestamp": "machine.observed_at",
+      "partition_keys": [
+        "machine.machine_id"
+      ],
+      "ordering_key": "machine.observed_at",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "regular",
+        "interval_seconds": 0.1
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "event_segmentation",
+        "duration_accumulation",
+        "aggregate"
+      ],
+      "expected_readiness_level": "duration_policy_pending"
+    },
+    {
+      "contract_id": "market-window-ready",
+      "matched_group": "market",
+      "variant": "positive",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "prices.trade_date",
+          "type": "date",
+          "role": "timestamp"
+        },
+        {
+          "id": "prices.symbol",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "prices.close",
+          "aliases": [
+            "收盘价",
+            "price"
+          ],
+          "type": "number",
+          "unit": "currency:CNY"
+        }
+      ],
+      "timestamp": "prices.trade_date",
+      "partition_keys": [
+        "prices.symbol"
+      ],
+      "ordering_key": "prices.trade_date",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "calendar_event",
+        "calendar": "XSHG"
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract",
+        "window_semantics": "trading_day"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "window_aggregate",
+        "market_calendar",
+        "event_segmentation"
+      ],
+      "expected_readiness_level": "logical_plan_ready"
+    },
+    {
+      "contract_id": "market-no-calendar",
+      "matched_group": "market",
+      "variant": "missing_capability",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "prices.trade_date",
+          "type": "date",
+          "role": "timestamp"
+        },
+        {
+          "id": "prices.symbol",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "prices.close",
+          "aliases": [
+            "收盘价",
+            "price"
+          ],
+          "type": "number",
+          "unit": "currency:CNY"
+        }
+      ],
+      "timestamp": "prices.trade_date",
+      "partition_keys": [
+        "prices.symbol"
+      ],
+      "ordering_key": "prices.trade_date",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "calendar_event",
+        "calendar": null
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract",
+        "window_semantics": "trading_day"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "window_aggregate",
+        "event_segmentation"
+      ],
+      "expected_readiness_level": "window_capability_pending"
+    },
+    {
+      "contract_id": "market-no-window-policy",
+      "matched_group": "market",
+      "variant": "missing_policy",
+      "read_only": true,
+      "fields": [
+        {
+          "id": "prices.trade_date",
+          "type": "date",
+          "role": "timestamp"
+        },
+        {
+          "id": "prices.symbol",
+          "type": "keyword",
+          "role": "partition"
+        },
+        {
+          "id": "prices.close",
+          "aliases": [
+            "收盘价",
+            "price"
+          ],
+          "type": "number",
+          "unit": "currency:CNY"
+        }
+      ],
+      "timestamp": "prices.trade_date",
+      "partition_keys": [
+        "prices.symbol"
+      ],
+      "ordering_key": "prices.trade_date",
+      "timezone": "Asia/Shanghai",
+      "sampling": {
+        "kind": "calendar_event",
+        "calendar": "XSHG"
+      },
+      "policies": {
+        "max_gap": "1.5 * sampling_interval",
+        "missing_data": "break_event",
+        "boundary": "source_predicate_operator",
+        "timezone_provenance": "source_contract"
+      },
+      "capabilities": [
+        "ordered_scan",
+        "window_aggregate",
+        "market_calendar",
+        "event_segmentation"
+      ],
+      "expected_readiness_level": "window_policy_pending"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "checks": {
+    "same_corpus": true,
+    "automatic_release_error_rate_lte_2pct": true,
+    "critical_errors_zero": true,
+    "unnecessary_clarifications_not_worse": true,
+    "incorrect_rejections_not_worse": true,
+    "multiturn_completions_not_worse": true,
+    "added_correct_coverage": true,
+    "warm_low_cost_p95_lte_1000ms": true
+  },
+  "baseline": {
+    "corpus_digest": "8bda57e4a21244df4775ff5a911d7bfabc4f529e70c241b41243b85ca3cdd2d1",
+    "total": 200,
+    "strata": {
+      "single_turn": 100,
+      "multi_turn": 50,
+      "multitask_negation": 25,
+      "out_of_scope_ambiguous": 25
+    },
+    "automatic_releases": 138,
+    "automatic_release_errors": 6,
+    "automatic_release_error_rate": 0.043478260869565216,
+    "critical_errors": 6,
+    "unnecessary_clarifications": 13,
+    "incorrect_rejections": 0,
+    "full_multiturn_completions": 31,
+    "correct_automatic_releases": 132,
+    "low_cost_p95_ms": 0.011700205504894257,
+    "upgrade_p50_ms": null,
+    "upgrade_p95_ms": null,
+    "end_to_end_p50_ms": null,
+    "end_to_end_p95_ms": null,
+    "automatic_release_error_wilson95": [
+      0.020076496618175392,
+      0.09160776658952166
+    ]
+  },
+  "candidate": {
+    "corpus_digest": "8bda57e4a21244df4775ff5a911d7bfabc4f529e70c241b41243b85ca3cdd2d1",
+    "total": 200,
+    "strata": {
+      "single_turn": 100,
+      "multi_turn": 50,
+      "multitask_negation": 25,
+      "out_of_scope_ambiguous": 25
+    },
+    "automatic_releases": 145,
+    "automatic_release_errors": 0,
+    "automatic_release_error_rate": 0.0,
+    "critical_errors": 0,
+    "unnecessary_clarifications": 0,
+    "incorrect_rejections": 0,
+    "full_multiturn_completions": 50,
+    "correct_automatic_releases": 145,
+    "low_cost_p95_ms": 0.023599714040756226,
+    "upgrade_p50_ms": null,
+    "upgrade_p95_ms": null,
+    "end_to_end_p50_ms": null,
+    "end_to_end_p95_ms": null,
+    "automatic_release_error_wilson95": [
+      1.734723475976807e-18,
+      0.02580906456528246
+    ]
+  }
+}

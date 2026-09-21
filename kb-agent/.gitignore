@@ -1,0 +1,19 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local model weights and generated benchmark output
+models/
+output/
+
+# Local runtime artifacts
+*.log
+*.tmp
+.env
+.env.*
+

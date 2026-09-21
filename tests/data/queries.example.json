@@ -1,0 +1,14 @@
+[
+  {
+    "query": "误差补偿回声状态网络",
+    "relevant": ["具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf"]
+  },
+  {
+    "query": "Bayesian spatio-temporal statistical methods",
+    "relevant": ["贝叶斯时空统计方法及应用进展与趋势_李俊明.pdf"]
+  },
+  {
+    "query": "conditional diffusion satellite telemetry missing data",
+    "relevant": ["基于条件扩散模型的卫星遥测数据缺失值插补方法_庞昭辰.pdf"]
+  }
+]

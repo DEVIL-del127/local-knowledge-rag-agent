@@ -1,0 +1,13 @@
+{
+  "schema_version": "literature-qrels-v1",
+  "judgement_policy": "A document is relevant when its primary subject is Echo State Network or MCMC; acronym collisions, bibliography-only mentions and Echo Belief Network are excluded.",
+  "cases": [
+    {"id": "esn-2019", "query": "Echo State Network", "sense_id": "echo-state-network", "year_from": 2019, "year_to": 2019, "relevant": ["DeePr-ESN A deep projection-encoding echo-state network.pdf"]},
+    {"id": "esn-2021", "query": "Echo State Network", "sense_id": "echo-state-network", "year_from": 2021, "year_to": 2021, "relevant": ["Long-Term Performance Prediction of PEMFC Based on LASSO-ESN.pdf"]},
+    {"id": "esn-2022", "query": "Echo State Network", "sense_id": "echo-state-network", "year_from": 2022, "year_to": 2022, "relevant": []},
+    {"id": "esn-2023", "query": "Echo State Network", "sense_id": "echo-state-network", "year_from": 2023, "year_to": 2023, "relevant": ["A new water level prediction model based on ESMD− VMD− WSD− ESN.pdf", "Multi-reservoir ESN-based prediction strategy for dynamic multi-objective optimization.pdf"]},
+    {"id": "esn-2024", "query": "Echo State Network", "sense_id": "echo-state-network", "year_from": 2024, "year_to": 2024, "relevant": ["Time Series Prediction of ESN Based on Chebyshev Mapping and Strongly Connected Topology.pdf", "具有双储层结构的动态误差补偿回声状态网络_张昭昭.pdf"]},
+    {"id": "esn-2025", "query": "Echo State Network", "sense_id": "echo-state-network", "year_from": 2025, "year_to": 2025, "relevant": ["1-s2.0-S0952197625001290-main.pdf", "1-s2.0-S1877050925003059-main.pdf", "Adaptive model based on ESN for anomaly detection in industrial systems.pdf", "一种基于多目标优化的ESN网络架构搜索方法_张昭昭.pdf", "动态回声状态网络在光伏发电短期功率预测中的应用_杨小渝.pdf", "基于回声状态网络的风电机组运行状态监测_金晓航.pdf", "融合稀疏观测与改进回声状态网络的混沌气候系统预测_丁琳.pdf", "论文刘月.pdf"]},
+    {"id": "mcmc-2025", "query": "Markov Chain Monte Carlo", "sense_id": "markov-chain-monte-carlo", "year_from": 2025, "year_to": 2025, "relevant": ["基于改进MCMC算法和代理模型的结构仿真模型更新_缪季.pdf"]}
+  ]
+}

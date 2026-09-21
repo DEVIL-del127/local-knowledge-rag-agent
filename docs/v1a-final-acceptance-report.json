@@ -1,0 +1,63 @@
+{
+  "schema_version": "v1a-final-acceptance-v1",
+  "generated_at": "2026-09-21",
+  "status": "passed_with_truthful_fail_closed_cases",
+  "authoritative": true,
+  "supersedes": [
+    "docs/v1a-acceptance-report.json",
+    "docs/v1a-runtime-e2e-business-chain-v1.json",
+    "docs/v1a-runtime-e2e-business-chain-v4.json"
+  ],
+  "semantic_categories": {
+    "enabled_by_user_authorization": true,
+    "validation": {
+      "literature_find": {"released": 60, "correct": 60, "precision": 1.0},
+      "literature_compare": {"released": 59, "correct": 58, "precision": 0.98305},
+      "general_chat": {"released": 56, "correct": 55, "precision": 0.98214}
+    },
+    "bge_m3_warm_p95_ms": 18.032
+  },
+  "independent_holdout": {
+    "artifact": "data/routing/v1a/business_chain_sealed_v4.jsonl",
+    "first_and_only_acceptance_run": true,
+    "passed": 12,
+    "total": 12,
+    "development_sets": ["business_chain_sealed_v2.jsonl", "business_chain_sealed_v3.jsonl"]
+  },
+  "production_real_answer_smoke": {
+    "artifact": "docs/v1a-production-real-answer-smoke-final.json",
+    "passed": 8,
+    "total": 8,
+    "fresh_state": true,
+    "external_answer_model": true
+  },
+  "real_es_chroma_e2e": {
+    "artifact": "docs/v1a-runtime-e2e-business-chain-final.json",
+    "passed": 74,
+    "total": 80,
+    "success_rate": 0.925,
+    "release_threshold_passed": true,
+    "truthful_insufficient_evidence": 6,
+    "citation_source_accuracy": 1.0,
+    "known_page_accuracy": 1.0,
+    "unknown_page_fabrications": 0,
+    "total_p50_ms": 502.471,
+    "total_p95_ms": 716.488
+  },
+  "tests": {
+    "v1a_focused": {"passed": 119, "failed": 0},
+    "full_suite": {"passed": 452, "failed": 23, "subtests_passed": 33},
+    "full_suite_failures_are_v1a_release_blockers": false,
+    "remaining_groups": [
+      "Windows open-handle cleanup in legacy cache/memory tests",
+      "legacy behavior expectations superseded by fail-closed V1-A routing",
+      "stale generic compiler/logical-plan fixtures",
+      "manifest identity and optional MCP environment tests"
+    ]
+  },
+  "v1b_admitted": false,
+  "notes": [
+    "Six fixed-corpus compare cases lack per-document/per-dimension evidence and correctly terminate as insufficient_evidence.",
+    "Earlier reports remain historical artifacts and are not the final acceptance authority."
+  ]
+}

@@ -1,0 +1,28 @@
+# 依赖清单 (pip install -r requirements.txt 可直接安装)
+# 实际安装版本以 venv 为准; 核心版本已对齐实测环境
+
+# ===== 检索层 =====
+elasticsearch==8.15.0
+chromadb==1.5.9
+pdfplumber==0.10.3
+pypdf2==3.0.1
+pytesseract==0.3.10
+Pillow>=10.1.0
+python-magic>=0.4.27
+tqdm>=4.66.1
+
+# ===== Agent 层 =====
+requests>=2.31.0
+langsmith>=0.3.0  # 可选: LangSmith 可观测性(LANGSMITH_TRACING=true 时生效)
+fastapi==0.141.1
+langgraph==1.2.11
+langgraph-checkpoint-sqlite==3.1.1
+mcp==1.29.1
+PyYAML>=6.0.2
+docling==2.124.0
+# CPU-only WSL installations should use the matching PyTorch CPU wheel index.
+torchvision==0.28.0
+
+# ===== 基础 =====
+numpy>=1.24.3
+scikit-learn==1.7.2

@@ -1,0 +1,168 @@
+{
+  "schema_version": "m15-operator-output-oracle-v1",
+  "operator_type_matrix": [
+    {
+      "operator": "consecutive",
+      "output": "relation<interval>"
+    },
+    {
+      "operator": "cumulative_duration",
+      "output": "relation<group_key,duration>"
+    },
+    {
+      "operator": "cumulative_value",
+      "output": "relation<group_key,quantity>"
+    },
+    {
+      "operator": "project_local_date",
+      "input": "relation<interval>",
+      "output": "relation<date>"
+    },
+    {
+      "operator": "set_intersection",
+      "input": "two relations with identical element type/grain",
+      "output": "relation<same>"
+    }
+  ],
+  "case_dags": [
+    {
+      "case_id": 24,
+      "nodes": [
+        "ConsecutiveEvent",
+        "ConsecutiveEvent",
+        "SetIntersection<interval>",
+        "DurationAccumulation<day,duration>",
+        "PeriodDuration<day,duration>",
+        "Ratio<number>"
+      ],
+      "forbidden": [
+        "CumulativeDuration->relation<interval>"
+      ]
+    },
+    {
+      "case_id": 27,
+      "nodes": [
+        "ConsecutiveEvent",
+        "CumulativeValue<day,distance>",
+        "ProjectDate",
+        "SetIntersection<date>",
+        "Ratio<number>"
+      ],
+      "forbidden": [
+        "Distance->DurationAccumulation"
+      ]
+    },
+    {
+      "case_id": 47,
+      "nodes": [
+        "ConsecutiveEvent",
+        "ConsecutiveEvent",
+        "SetIntersection<interval>",
+        "DurationAccumulation<day,duration>",
+        "PeriodDuration<day,duration>",
+        "Ratio<number>"
+      ],
+      "forbidden": [
+        "SameProducerSet",
+        "CumulativeDuration->relation<interval>"
+      ]
+    }
+  ],
+  "negative_bindings": [
+    {
+      "name": "duration_as_interval",
+      "producer": "DurationAccumulation",
+      "consumer": "SetIntersection<interval>",
+      "expected": "reject"
+    },
+    {
+      "name": "distance_as_duration",
+      "producer": "CumulativeValue<distance>",
+      "consumer": "DurationRatio",
+      "expected": "reject"
+    },
+    {
+      "name": "same_set_producer",
+      "producer_refs": [
+        "event_a",
+        "event_a"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "mixed_set_grain",
+      "producer_types": [
+        "relation<date>",
+        "relation<interval>"
+      ],
+      "expected": "reject"
+    }
+  ],
+  "date_projection_cases": [
+    {
+      "name": "cross_midnight",
+      "interval": "[2026-08-01T23:59+08:00,2026-08-02T00:01+08:00)",
+      "dates": [
+        "2026-08-01",
+        "2026-08-02"
+      ]
+    },
+    {
+      "name": "exact_midnight_end",
+      "interval": "[2026-08-01T23:00+08:00,2026-08-02T00:00+08:00)",
+      "dates": [
+        "2026-08-01"
+      ]
+    },
+    {
+      "name": "window_clip",
+      "interval": "[2026-07-31T23:00+08:00,2026-08-02T01:00+08:00)",
+      "query_window": "[2026-08-01T00:00+08:00,2026-08-02T00:00+08:00)",
+      "dates": [
+        "2026-08-01"
+      ]
+    },
+    {
+      "name": "deduplicate",
+      "intervals": [
+        "[2026-08-01T01:00+08:00,2026-08-01T02:00+08:00)",
+        "[2026-08-01T03:00+08:00,2026-08-01T04:00+08:00)"
+      ],
+      "dates": [
+        "2026-08-01"
+      ]
+    },
+    {
+      "name": "dst_naive_rejected",
+      "timezone": "America/New_York",
+      "interval": "[2026-11-01T01:15,2026-11-01T01:45)",
+      "expected": "timezone_ambiguity"
+    }
+  ],
+  "quantity_cases": [
+    {
+      "name": "absolute_celsius",
+      "kind": "absolute_temperature",
+      "transform": "affine",
+      "expected": "supported"
+    },
+    {
+      "name": "celsius_delta",
+      "kind": "temperature_delta",
+      "transform": "linear",
+      "expected": "supported"
+    },
+    {
+      "name": "db_same_semantic",
+      "kind": "sound_level",
+      "transform": "logarithmic",
+      "expected": "same_unit_comparison_only"
+    },
+    {
+      "name": "db_scalar_conversion",
+      "kind": "sound_level",
+      "operation": "multiply_scale",
+      "expected": "reject"
+    }
+  ]
+}

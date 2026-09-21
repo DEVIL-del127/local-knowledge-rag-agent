@@ -1,0 +1,64 @@
+[project]
+name = "study"
+version = "2.0.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "STUDY RAG Maintainers", email = "181607189+DEVIL-del127@users.noreply.github.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "chromadb==1.5.9",
+    "requests>=2.34.2",
+    "pdfplumber>=0.10.3",
+    "PyPDF2==3.0.1",
+    "pytesseract>=0.3.10",
+    "python-magic>=0.4.27",
+    "Pillow>=10.1.0",
+    "tqdm>=4.66.1",
+    "cryptography>=50.0.1",
+    "elasticsearch==8.15.0",
+    "fastapi==0.141.1",
+    "httpx>=0.28.1",
+    "langchain>=1.3.15",
+    "langchain-community>=0.4.2",
+    "langchain-deepseek>=1.0.0",
+    "langchain-openai>=1.5.0",
+    "langgraph==1.2.11",
+    "langgraph-checkpoint-sqlite==3.1.1",
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.2.2",
+    "pyyaml>=6.0.2",
+    "scikit-learn==1.7.2",
+    "sentence-transformers>=5.7.0",
+    "uvicorn[standard]>=0.52.3",
+]
+
+[project.optional-dependencies]
+ingestion = [
+    "docling==2.124.0",
+    "mcp==1.29.1",
+    "torchvision==0.28.0",
+]
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+study = "agent_main:main"
+
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["agent_main", "main", "nlu_legacy.cleaner", "nlu_legacy.nlu"]
+packages = ["agent", "agent.runtime", "agent.mcp", "agent.tools", "core", "ingestion", "ingestion.chunking", "ingestion.parsers", "ingestion.pipeline", "ingestion.quality", "memory", "telemetry", "telemetry.search_log", "nlu_v2", "study", "prompts"]
+
+[tool.setuptools.package-dir]
+nlu_v2 = "kb-agent/nlu_v2"
+nlu_legacy = "kb-agent"
+study = "src/study"
+
+[tool.setuptools.package-data]
+prompts = ["*.md"]
